@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --darkgrey: #2b2b2b;
+    --grey: #424242;
+    --lightgrey: #606060;
+    --white: #dbdbdb;
+    --blue: #008bdc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-areas: ". header ."
+                         "nav main main"
+                         "footer footer footer";
+    grid-template-columns: 16.5% 63% 1fr;
+    grid-template-rows: 25px 772px 87px;
+    grid-gap: 0px;
+    background-color: var(--grey);
+    padding: 0;
+    margin: 0;
+}
+
+header, nav, main, footer {
+    border: 1px dashed tomato;
+    margin: 0;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-navigation li {
+    /*width: 90px;*/
+    padding: 2px 27px;
+    color: var(--white);
+    font: .8rem "Open Sans";
+    text-align: center;
+    border-left: 1px solid var(--lightgrey);
+    border-right: 1px solid var(--darkgrey);
+    cursor: pointer;
+}
+
+#emphasized-header-nav-item {
+    padding: 2px 35px;
+    font-size: 1rem;
+    border-bottom: 3px solid var(--blue);
+    background-color: var(--darkgrey);
+}
+
+.authorisation-block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.authorisation-block > p, a {
+    color: var(--white);
+    font: .7rem "Open Sans";
+    margin: 0;
+    padding: 2px 5px;
+}
+
+.authorisation-block > p {
+    padding: 2px 22px;
+    font-weight: 600;
+}
+
+
+/* ********************* nav ******************** */
+
+
+
+nav {
+    grid-area: nav;
+}
+
+.side-nav-items {
+    list-style-image: url("images/folder-grey.png");
+}
+
+.side-nav-items li {
+    border-top: 2px ridge;
+}
+
+.side-pseudo-nav {
+    list-style: none;
+}
+
+#emphasized-side-nav-item {
+    list-style-image: url("images/folder-blue.png");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}

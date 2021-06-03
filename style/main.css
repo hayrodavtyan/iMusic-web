@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-areas: ". header ." "nav main main" "footer footer footer";
+  grid-template-columns: 16.5% 63% 1fr;
+  grid-template-rows: 25px 772px 87px;
+  grid-gap: 0px;
+  background-color: #424242;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+header, nav, main, footer {
+  border: 1px dotted tomato;
+  margin: 0;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-navigation li {
+  /*width: 90px;*/
+  padding: 2px 27px;
+  color: #dbdbdb;
+  font: 300 0.8rem "Open Sans";
+  text-align: center;
+  border-left: 1px solid #606060;
+  border-right: 1px solid #2b2b2b;
+  cursor: pointer;
+}
+
+#is_emphasized-header-item {
+  padding: 2px 36px;
+  font: 400 1rem "Open sans", sans-serif;
+  border-bottom: 3px solid #008bdc;
+  background-color: #2b2b2b;
+}
+
+.authorisation-block {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.authorisation-block > p, a {
+  color: #dbdbdb;
+  font: 0.7rem "Open Sans";
+  margin: 0;
+  padding: 2px 5px;
+}
+
+.authorisation-block > p {
+  padding: 2px 22px;
+  font-weight: 600;
+}
+
+/* ********************************    nav   ********************************* */
+nav {
+  grid-area: nav;
+  position: relative;
+  background: #2b2b2b;
+  background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
+}
+
+.main-logo {
+  position: absolute;
+  top: 18px;
+  left: 33%;
+  margin: 0;
+  transform: translateX(-15px);
+}
+
+.nav-title {
+  position: absolute;
+  top: 165px;
+  left: 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translate(0, -18px);
+}
+.nav-title p {
+  margin: 0 0 0 17px;
+  font: 300 1.7rem "Open Sans", sans-serif;
+  color: #dbdbdb;
+}
+
+.side-nav-items {
+  position: absolute;
+  top: 186px;
+  right: 0;
+  width: 80%;
+  list-style-image: url("../../../images/folder-grey.png");
+  padding: 0;
+}
+.side-nav-items li {
+  padding: 16px 12px;
+  margin-left: 22px;
+  font-weight: 300;
+  color: #dbdbdb;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+}
+.side-nav-items :nth-child(2) {
+  list-style: none;
+  padding: 0;
+}
+
+.side-pseudo-nav {
+  padding: 0 0 3px 13px;
+  margin: 0;
+  list-style-type: none;
+}
+.side-pseudo-nav li {
+  margin-left: 10px;
+  padding: 10px 0;
+  font-size: 0.8rem;
+  border: none;
+}
+
+#is_emphasized-side-item {
+  padding-bottom: 10px;
+  list-style-image: url("../../../images/folder-blue.png");
+  background-color: #2b2b2b;
+  border: none;
+  border-top-width: 2px;
+  border-top-style: groove;
+}
+
+.nav-bottom-info {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  padding: 0;
+  background: #1d1d1d;
+}
+.nav-bottom-info p {
+  margin: 5px 0;
+  text-align: center;
+  font-size: 0.6rem;
+  color: #dbdbdb;
+}
+.nav-bottom-info :nth-child(3) {
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+.nav-bottom-info div {
+  width: 90%;
+  margin: 0 auto;
+  border-top: 1px solid black;
+  border-bottom: 1px solid #606060;
+}
+
+/* ***********************************    main    ************************************ */
+main {
+  grid-area: main;
+  background: #606060;
+}
+
+.main-section {
+  width: 74%;
+  height: 576px;
+  margin: 18px;
+  background: #424242;
+  outline: 1px dashed cyan;
+}
+
+.playlist-title {
+  width: 100%;
+  padding: 10px 20px;
+  background: #2b2b2b;
+  border-top: 3px solid #424242;
+  border-bottom: 1px solid #1d1d1d;
+}
+.playlist-title h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #dbdbdb;
+}
+
+.album-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10px;
+  margin: 0;
+  border-top: 1px solid #606060;
+  border-bottom: 1px solid #1d1d1d;
+}
+
+.more-group-images {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 13px;
+  grid-row-gap: 5px;
+  margin-right: 25px;
+  width: 256px;
+}
+
+.group-biography {
+  position: relative;
+  width: 33%;
+  height: 100px;
+  margin: 0 20px;
+  font-size: 0.65rem;
+  color: #dbdbdb;
+  border: 1px solid blue;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.group-biography button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.7rem;
+  background: transparent;
+  border: none;
+  color: #008bdc;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/*# sourceMappingURL=main.css.map */
