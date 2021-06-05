@@ -51,8 +51,9 @@ header {
   color: $white;
   font: 300 .8rem "Open Sans";
   text-align: center;
-  border-left: 1px solid $lightgrey;
-  border-right: 1px solid $darkgrey;
+  border-right-width: 2px;
+  border-right-style: groove;
+  border-color: rgba(100,100,100,0.7);
   cursor: pointer;
 }
 
@@ -125,12 +126,17 @@ nav {
   padding: 0;
 
   li {
-    padding: 16px 12px;
-    margin-left: 22px;
+    list-style-position: inside;
+    padding: 16px 0;
     font-weight: 300;
     color: $white;
     border-bottom-width: 2px;
     border-bottom-style: groove;
+    border-color: rgba(100,100,100,0.7);
+
+    span {
+      padding-left: 10px;
+    }
   }
 
   :nth-child(2) {
@@ -140,12 +146,12 @@ nav {
 }
 
 .side-pseudo-nav {
-  padding: 0 0 3px 13px;
+  padding: 0 0 3px 20px;
   margin: 0;
   list-style-type: none;
 
   li {
-    margin-left: 10px;
+    margin-left: 25px;
     padding: 10px 0;
     font-size: .8rem;
     border: none;
@@ -156,9 +162,10 @@ nav {
   padding-bottom: 10px;
   list-style-image: url("../../../images/folder-blue.png");
   background-color: $darkgrey;
-  border: none;
+  border-bottom: none;
   border-top-width: 2px;
   border-top-style: groove;
+  border-color: rgba(100,100,100,0.7);
 }
 
 .nav-bottom-info {
@@ -200,10 +207,9 @@ main {
 
 .main-section {
   width: 74%;
-  height: 576px;
   margin: 18px;
   background: $grey;
-  outline: 1px dashed cyan;
+  outline: 1px solid cyan;
 }
 
 .playlist-title {
@@ -211,7 +217,9 @@ main {
   padding: 10px 20px;
   background: $darkgrey;
   border-top: 3px solid $grey;
-  border-bottom: 1px solid $darker;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-color: rgba(100,100,100,0.7);
 
   h1 {
     margin: 0;
@@ -229,14 +237,15 @@ main {
   align-items: center;
   padding: 13px 10px;
   margin: 0;
-  border-top: 1px solid $lightgrey;
-  border-bottom: 1px solid $darker;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-color: rgba(100,100,100,0.7);
 }
 
 .more-group-images {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-column-gap: 13px;
+  grid-column-gap: 11px;
   grid-row-gap: 5px;
   margin-right: 25px;
   width: 256px;
@@ -265,7 +274,62 @@ main {
 }
 
 
+.recommendations-and-playlist {
+  position: relative;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-color: rgba(100,100,100,0.7);
+  outline: 1px dashed lightgreen;
 
+  p {
+    margin: 13px 13px 7px 13px;
+    color: $white;
+  }
+}
+
+
+.recommendations {
+  display: inline-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 58%;
+  border: 1px dotted gold;
+
+  img {
+    margin: 10px 7px;
+    padding: 0;
+    border: 15px solid $darkgrey;
+  }
+}
+
+
+.playlist {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  font-size: 1rem;
+  color: $white;
+  border: 1px dotted crimson;
+
+  li::marker {
+    color: $white;
+    font-size: .7rem;
+  }
+
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+  }
+}
+
+.playlist-pages {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+}
 
 
 

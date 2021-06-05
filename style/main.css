@@ -41,8 +41,9 @@ header {
   color: #dbdbdb;
   font: 300 0.8rem "Open Sans";
   text-align: center;
-  border-left: 1px solid #606060;
-  border-right: 1px solid #2b2b2b;
+  border-right-width: 2px;
+  border-right-style: groove;
+  border-color: rgba(100, 100, 100, 0.7);
   cursor: pointer;
 }
 
@@ -110,12 +111,16 @@ nav {
   padding: 0;
 }
 .side-nav-items li {
-  padding: 16px 12px;
-  margin-left: 22px;
+  list-style-position: inside;
+  padding: 16px 0;
   font-weight: 300;
   color: #dbdbdb;
   border-bottom-width: 2px;
   border-bottom-style: groove;
+  border-color: rgba(100, 100, 100, 0.7);
+}
+.side-nav-items li span {
+  padding-left: 10px;
 }
 .side-nav-items :nth-child(2) {
   list-style: none;
@@ -123,12 +128,12 @@ nav {
 }
 
 .side-pseudo-nav {
-  padding: 0 0 3px 13px;
+  padding: 0 0 3px 20px;
   margin: 0;
   list-style-type: none;
 }
 .side-pseudo-nav li {
-  margin-left: 10px;
+  margin-left: 25px;
   padding: 10px 0;
   font-size: 0.8rem;
   border: none;
@@ -138,9 +143,10 @@ nav {
   padding-bottom: 10px;
   list-style-image: url("../../../images/folder-blue.png");
   background-color: #2b2b2b;
-  border: none;
+  border-bottom: none;
   border-top-width: 2px;
   border-top-style: groove;
+  border-color: rgba(100, 100, 100, 0.7);
 }
 
 .nav-bottom-info {
@@ -176,10 +182,9 @@ main {
 
 .main-section {
   width: 74%;
-  height: 576px;
   margin: 18px;
   background: #424242;
-  outline: 1px dashed cyan;
+  outline: 1px solid cyan;
 }
 
 .playlist-title {
@@ -187,7 +192,9 @@ main {
   padding: 10px 20px;
   background: #2b2b2b;
   border-top: 3px solid #424242;
-  border-bottom: 1px solid #1d1d1d;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-color: rgba(100, 100, 100, 0.7);
 }
 .playlist-title h1 {
   margin: 0;
@@ -203,14 +210,15 @@ main {
   align-items: center;
   padding: 13px 10px;
   margin: 0;
-  border-top: 1px solid #606060;
-  border-bottom: 1px solid #1d1d1d;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-color: rgba(100, 100, 100, 0.7);
 }
 
 .more-group-images {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-column-gap: 13px;
+  grid-column-gap: 11px;
   grid-row-gap: 5px;
   margin-right: 25px;
   width: 256px;
@@ -235,6 +243,57 @@ main {
   background: transparent;
   border: none;
   color: #008bdc;
+}
+
+.recommendations-and-playlist {
+  position: relative;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-color: rgba(100, 100, 100, 0.7);
+  outline: 1px dashed lightgreen;
+}
+.recommendations-and-playlist p {
+  margin: 13px 13px 7px 13px;
+  color: #dbdbdb;
+}
+
+.recommendations {
+  display: inline-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 58%;
+  border: 1px dotted gold;
+}
+.recommendations img {
+  margin: 10px 7px;
+  padding: 0;
+  border: 15px solid #2b2b2b;
+}
+
+.playlist {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  font-size: 1rem;
+  color: #dbdbdb;
+  border: 1px dotted crimson;
+}
+.playlist li::marker {
+  color: #dbdbdb;
+  font-size: 0.7rem;
+}
+.playlist ol {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+}
+
+.playlist-pages {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
 }
 
 footer {
