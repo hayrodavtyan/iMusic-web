@@ -280,14 +280,46 @@ main {
   color: #dbdbdb;
   border: 1px dotted crimson;
 }
-.playlist li::marker {
-  color: #dbdbdb;
-  font-size: 0.7rem;
-}
 .playlist ol {
   padding: 0;
   margin: 0;
   list-style-position: inside;
+}
+.playlist ol li {
+  position: relative;
+  padding: 5px 0;
+}
+.playlist ol li p {
+  position: absolute;
+  right: 40px;
+  display: inline-block;
+  padding: 0 3px;
+  margin: auto 0;
+  font-size: 0.75rem;
+  border-left-width: 2px;
+  border-left-style: groove;
+  border-color: rgba(100, 100, 100, 0.7);
+  outline: 1px solid red;
+}
+.playlist ol li button {
+  position: absolute;
+  right: 0;
+  padding: 5px 12px;
+  background-color: transparent;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  border-left-width: 2px;
+  border-left-style: groove;
+  border-color: rgba(100, 100, 100, 0.7);
+  outline: 1px solid lime;
+}
+.playlist ol li::marker {
+  color: #dbdbdb;
+  font-size: 0.8rem;
+}
+.playlist ol li:hover {
+  background-color: #008bdc;
 }
 
 .playlist-pages {

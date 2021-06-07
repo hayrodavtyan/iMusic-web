@@ -313,17 +313,57 @@ main {
   color: $white;
   border: 1px dotted crimson;
 
-  li::marker {
-    color: $white;
-    font-size: .7rem;
-  }
-
   ol {
     padding: 0;
     margin: 0;
     list-style-position: inside;
+
+    li {
+      position: relative;
+      padding: 5px 0;
+    }
+
+    li p {
+      position: absolute;
+      right: 40px;
+      display: inline-block;
+      padding: 0 3px;
+      margin: auto 0;
+      font-size: .75rem;
+      border-left-width: 2px;
+      border-left-style: groove;
+      border-color: rgba(100,100,100,0.7);
+      outline: 1px solid red;
+    }
+
+    li button {
+      position: absolute;
+      right: 0;
+      padding: 5px 12px;
+      background-color: transparent;
+      border-top: none;
+      border-bottom: none;
+      border-right: none;
+      border-left-width: 2px;
+      border-left-style: groove;
+      border-color: rgba(100,100,100,0.7);
+      outline: 1px solid lime;
+    }
+
+    li::marker {
+      color: $white;
+      font-size: .8rem;
+    }
+
+    li:hover {
+      background-color: $blue;
+    }
   }
 }
+
+
+
+
 
 .playlist-pages {
   list-style-type: none;
