@@ -247,17 +247,21 @@ main {
 
 .recommendations-and-playlist {
   position: relative;
+  height: 320px;
   border-bottom-width: 2px;
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
   outline: 1px dashed lightgreen;
 }
 .recommendations-and-playlist p {
+  position: absolute;
   margin: 13px 13px 7px 13px;
   color: #dbdbdb;
 }
 
 .recommendations {
+  position: absolute;
+  top: 40px;
   display: inline-flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -276,26 +280,32 @@ main {
   right: 0;
   width: 35%;
   height: 100%;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #dbdbdb;
   border: 1px dotted crimson;
 }
 .playlist ol {
   padding: 0;
-  margin: 0;
+  margin: 5px 0 0 0;
   list-style-position: inside;
 }
 .playlist ol li {
   position: relative;
-  padding: 5px 0;
+  padding: 0;
+  height: 27px;
+}
+.playlist ol li a {
+  vertical-align: middle;
+  margin: 0 7px;
 }
 .playlist ol li p {
   position: absolute;
-  right: 40px;
+  right: 37px;
   display: inline-block;
-  padding: 0 3px;
-  margin: auto 0;
+  padding: 0 7px;
+  margin: 8px 0 0 0;
   font-size: 0.75rem;
+  vertical-align: middle;
   border-left-width: 2px;
   border-left-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
@@ -304,7 +314,7 @@ main {
 .playlist ol li button {
   position: absolute;
   right: 0;
-  padding: 5px 12px;
+  padding: 5px 10px;
   background-color: transparent;
   border-top: none;
   border-bottom: none;
@@ -320,6 +330,16 @@ main {
 }
 .playlist ol li:hover {
   background-color: #008bdc;
+}
+
+.is_emphesized-playlist-item {
+  margin-left: -10px;
+  background-color: #008bdc;
+  list-style: none;
+}
+
+.play-s {
+  vertical-align: middle;
 }
 
 .playlist-pages {
