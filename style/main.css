@@ -382,20 +382,19 @@ footer {
   border-radius: 100px;
 }
 
-.controller-block {
+.volume-block {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 112px;
   height: 80%;
   border-bottom: 1px solid #191919;
-  outline: 1px dotted cyan;
 }
-.controller-block img {
+.volume-block img {
   margin: 0 3px;
 }
 
-.controller-range {
+.volume-range {
   position: relative;
   width: 52px;
   height: 3px;
@@ -403,14 +402,14 @@ footer {
   border-radius: 10px;
 }
 
-.blue-part {
+.volume-blue-part {
   height: 100%;
   width: 70%;
   background-color: #008bdd;
   border-radius: 10px;
 }
 
-.slider {
+.volume-slider {
   position: absolute;
   left: 70%;
   transform: translate(-4px, -2px);
@@ -421,30 +420,24 @@ footer {
   background-color: #008bdd;
 }
 
-.song-player-info {
-  display: flex;
-  justify-content: flex-start;
-  height: 60px;
-}
-
 .song-name-block {
   width: 52%;
   border: 1px solid var(--grey);
   padding: 6px 10px;
   position: relative;
   background-color: #343434;
+  color: #dbdbdb;
+  outline: 1px dotted cyan;
 }
 
 .song-author {
   font: 600 10px "Open sans", sans-serif;
-  color: var(--white);
   margin: 5px 3px 4px 3px;
 }
 
 .song-name {
   width: calc(100% - 55px);
   font: 10px "Open sans", sans-serif;
-  color: var(--white);
   margin: 0 3px;
   display: inline-block;
   white-space: nowrap;
@@ -457,7 +450,6 @@ footer {
   bottom: 3px;
   right: 25px;
   font: 10px "Open sans", sans-serif;
-  color: var(--white);
 }
 
 .song-name-block button {
@@ -474,6 +466,40 @@ footer {
   height: auto;
 }
 
+/*.controller-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 80%;
+  border-bottom: 1px solid #191919;
+}
+
+.controller-range {
+  position: relative;
+  width: 52px;
+  height: 3px;
+  background-color: $white;
+  border-radius: 10px;
+}
+
+.controller-blue-part {
+  height: 100%;
+  width: 70%;
+  background-color: #008bdd;
+  border-radius: 10px;
+}
+
+.controller-slider {
+  position: absolute;
+  left: 70%;
+  transform: translate(-4px, -2px);
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  border: 3px solid #93cdec;
+  background-color: #008bdd;
+}*/
 .player-preferences {
   width: 6%;
   border: 1px solid #343434;
@@ -489,7 +515,6 @@ footer {
 .player-preferences button img {
   width: 6px;
   box-sizing: content-box;
-  padding: auto auto;
   margin-top: 3px;
 }
 

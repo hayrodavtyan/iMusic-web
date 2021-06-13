@@ -1,175 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> iMusic </title>
-        <link rel="stylesheet" href="style/main.css">
-    </head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> iMusic </title>
+    <link rel="stylesheet" href="style/main.css">
+  </head>
 
-    <body>
+  <body>
 
-        <header>
-            <div class="header-navigation">
-                <ul>
-                    <li>music</li>
-                    <li id="is_emphasized-header-item">radio</li>
-                    <li>library</li>
-                    <li>charts</li>
-                </ul>
-            </div>
+    <header>
+      <div class="header-navigation">
+        <ul>
+          <li>music</li>
+          <li id="is_emphasized-header-item">radio</li>
+          <li>library</li>
+          <li>charts</li>
+        </ul>
+      </div>
 
-            <div class="authorisation-block">
-                <p>Hi, George!</p>
-                <a href="javascript:void(0);"><u> Logout </u></a>
-            </div>
-        </header>
+      <div class="authorisation-block">
+        <p>Hi, George!</p>
+        <a href="javascript:void(0);"><u> Logout </u></a>
+      </div>
+    </header>
 
     <!--    *********************************   nav   ************************************    -->
 
-        <nav>
-            <img class="main-logo" src="images/logo.png" alt="iMusic Logo" width="87" height="67">
+    <nav>
+      <img class="main-logo" src="images/logo.png" alt="iMusic Logo" width="87" height="67">
 
-            <div class="nav-title">
-                <img src="images/profile-info.png" alt="profile info" width="36" height="27">
-                <p> my library </p>
-            </div>
+      <div class="nav-title">
+        <img src="images/profile-info.png" alt="profile info" width="36" height="27">
+        <p> my library </p>
+      </div>
 
-            <ul class="side-nav-items">
-                <li id="is_emphasized-side-item"> <span> playlists </span> </li>
-                <li>
-                    <ul class="side-pseudo-nav">
-                        <li>my playlist 1</li>
-                        <li>my playlist 2</li>
-                        <li>my playlist 3</li>
-                    </ul>
-                </li>
-                <li><span> my mp3 </span></li>
-                <li><span> tracks </span></li>
-                <li><span> favorites </span></li>
+      <ul class="side-nav-items">
+        <li id="is_emphasized-side-item"> <span> playlists </span> </li>
+        <li>
+          <ul class="side-pseudo-nav">
+            <li>my playlist 1</li>
+            <li>my playlist 2</li>
+            <li>my playlist 3</li>
+          </ul>
+        </li>
+        <li><span> my mp3 </span></li>
+        <li><span> tracks </span></li>
+        <li><span> favorites </span></li>
+      </ul>
+
+      <div class="nav-bottom-info">
+        <p>iMusic.am <b>Radio</b> live:</p>
+        <div></div>
+        <p>La neblina del verano by new phunk theory</p>
+      </div>
+
+    </nav>
+
+
+    <!--    *********************************   main   ************************************    -->
+
+
+    <main>
+
+      <div class="main-section">
+
+        <div class="playlist-title"> <h1>Pink Floyd</h1> </div>
+
+        <div class="album-info">
+          <img src="images/pinkfloyd1.jpg" alt="pink floyd group members" width="239" height="160">
+          <div class="more-group-images">
+            <img src="images/pinkfloyd3.jpg" alt="group members" width="122" height="79">
+            <img src="images/pinkfloyd2.jpg" alt="group members" width="122" height="79">
+            <img src="images/pinkfloyd2.jpg" alt="group members" width="122" height="79">
+            <img src="images/pinkfloyd3.jpg" alt="group members" width="122" height="79">
+          </div>
+
+          <div class="group-biography">
+            Pink Floyd was a psychedelic/progressive rock band formed in Cambridge, England, United Kingdom in 1965. Pink Floyd is one of  rock's most successful and influential acts, having sold over 200 million albums worldwide... Pink Floyd is one of rock's most successful and influential acts, having sold over 200 million albums worldwide... Pink Floyd is one of rock's most  Pink Floyd is one of rock's most successful and influential acts, having sold over 200 million albums worldwide...
+            <button type="button"> <u> Read </u> </button>
+          </div>
+        </div>
+
+        <div class="recommendations-and-playlist">
+          <p>Discography</p>
+          <div class="recommendations">
+            <img src="images/album1.jpg" alt="album cover" width="120" height="120">
+            <img src="images/album2.jpg" alt="album cover" width="120" height="120">
+            <img src="images/album3.jpg" alt="album cover" width="120" height="120">
+            <img src="images/album4.jpg" alt="album cover" width="120" height="120">
+            <img src="images/album1.jpg" alt="album cover" width="120" height="120">
+            <img src="images/album2.jpg" alt="album cover" width="120" height="120">
+            <img src="images/album3.jpg" alt="album cover" width="120" height="120">
+            <img src="images/album4.jpg" alt="album cover" width="120" height="120">
+          </div>
+
+          <div class="playlist">
+            <ol>
+              <li><a href="javascript:void(0);"> Speak To Me (1:08) </a> <p> 308 </p> <button> <img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+              <li><a href="javascript:void(0);"> Breathe (2:48) </a> <p> 278 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+              <li class="is_emphasized-playlist-item"><img src="images/play-s.png" alt="play" class="current-track-icon"> <a href="javascript:void(0);"> On The Run (3:50) </a> <p> 184 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+              <li><a href="javascript:void(0);"> Time (6:49) </a> <p> 285 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+              <li><a href="javascript:void(0);"> The Great Gig In The Sky (4:44) </a> <p> 33 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+              <li><a href="javascript:void(0);"> Money (6:22) </a> <p> 180 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+              <li><a href="javascript:void(0);"> Us And Them (7:49) </a> <p> 377 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+              <li><a href="javascript:void(0);"> Any Color You Like (3:26) </a> <p> 42 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+              <li><a href="javascript:void(0);"> Brain Damage (3:47) </a> <p> 176 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+              <li><a href="javascript:void(0);"> Eclipse (2:11) </a> <p> 44 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
+            </ol>
+
+            <ul class="playlist-pages">
+              <li><a href="javascript:void(0);"> << </a></li>
+              <li><a href="javascript:void(0);"> 1 </a></li>
+              <li><a href="javascript:void(0);" id="pages-emphasized"> 2 </a></li>
+              <li><a href="javascript:void(0);"> 3 </a></li>
+              <li><a href="javascript:void(0);"> 4 </a></li>
+              <li><a href="javascript:void(0);"> 5 </a></li>
+              <li><a href="javascript:void(0);"> 6 </a></li>
+              <li><a href="javascript:void(0);"> 7 </a></li>
+              <li><a href="javascript:void(0);"> >> </a></li>
             </ul>
 
-            <div class="nav-bottom-info">
-                <p>iMusic.am <b>Radio</b> live:</p>
-                <div></div>
-                <p>La neblina del verano by new phunk theory</p>
-            </div>
+          </div>
+        </div> <!-- recommendations-and-platlist -->
 
-        </nav>
+      </div>  <!-- main-section -->
 
-
-        <!--    *********************************   main   ************************************    -->
+    </main>
 
 
-        <main>
-
-            <div class="main-section">
-
-                <div class="playlist-title"> <h1>Pink Floyd</h1> </div>
-
-                <div class="album-info">
-                    <img src="images/pinkfloyd1.jpg" alt="pink floyd group members" width="239" height="160">
-                    <div class="more-group-images">
-                        <img src="images/pinkfloyd3.jpg" alt="group members" width="122" height="79">
-                        <img src="images/pinkfloyd2.jpg" alt="group members" width="122" height="79">
-                        <img src="images/pinkfloyd2.jpg" alt="group members" width="122" height="79">
-                        <img src="images/pinkfloyd3.jpg" alt="group members" width="122" height="79">
-                    </div>
-
-                    <div class="group-biography">
-                        Pink Floyd was a psychedelic/progressive rock band formed in Cambridge, England, United Kingdom in 1965. Pink Floyd is one of  rock's most successful and influential acts, having sold over 200 million albums worldwide... Pink Floyd is one of rock's most successful and influential acts, having sold over 200 million albums worldwide... Pink Floyd is one of rock's most  Pink Floyd is one of rock's most successful and influential acts, having sold over 200 million albums worldwide...
-                        <button type="button"> <u> Read </u> </button>
-                    </div>
-                </div>
-
-                <div class="recommendations-and-playlist">
-                    <p>Discography</p>
-                    <div class="recommendations">
-                        <img src="images/album1.jpg" alt="album cover" width="120" height="120">
-                        <img src="images/album2.jpg" alt="album cover" width="120" height="120">
-                        <img src="images/album3.jpg" alt="album cover" width="120" height="120">
-                        <img src="images/album4.jpg" alt="album cover" width="120" height="120">
-                        <img src="images/album1.jpg" alt="album cover" width="120" height="120">
-                        <img src="images/album2.jpg" alt="album cover" width="120" height="120">
-                        <img src="images/album3.jpg" alt="album cover" width="120" height="120">
-                        <img src="images/album4.jpg" alt="album cover" width="120" height="120">
-                    </div>
-
-                    <div class="playlist">
-                        <ol>
-                            <li><a href="javascript:void(0);"> Speak To Me (1:08) </a> <p> 308 </p> <button> <img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                            <li><a href="javascript:void(0);"> Breathe (2:48) </a> <p> 278 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                            <li class="is_emphasized-playlist-item"><img src="images/play-s.png" alt="play" class="current-track-icon"> <a href="javascript:void(0);"> On The Run (3:50) </a> <p> 184 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                            <li><a href="javascript:void(0);"> Time (6:49) </a> <p> 285 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                            <li><a href="javascript:void(0);"> The Great Gig In The Sky (4:44) </a> <p> 33 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                            <li><a href="javascript:void(0);"> Money (6:22) </a> <p> 180 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                            <li><a href="javascript:void(0);"> Us And Them (7:49) </a> <p> 377 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                            <li><a href="javascript:void(0);"> Any Color You Like (3:26) </a> <p> 42 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                            <li><a href="javascript:void(0);"> Brain Damage (3:47) </a> <p> 176 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                            <li><a href="javascript:void(0);"> Eclipse (2:11) </a> <p> 44 </p> <button><img src="images/plus-grey.png" alt="add to playlist" width="13" height="13"> </button> </li>
-                        </ol>
-
-                        <ul class="playlist-pages">
-                            <li><a href="javascript:void(0);"> << </a></li>
-                            <li><a href="javascript:void(0);"> 1 </a></li>
-                            <li><a href="javascript:void(0);" id="pages-emphasized"> 2 </a></li>
-                            <li><a href="javascript:void(0);"> 3 </a></li>
-                            <li><a href="javascript:void(0);"> 4 </a></li>
-                            <li><a href="javascript:void(0);"> 5 </a></li>
-                            <li><a href="javascript:void(0);"> 6 </a></li>
-                            <li><a href="javascript:void(0);"> 7 </a></li>
-                            <li><a href="javascript:void(0);"> >> </a></li>
-                        </ul>
-
-                    </div>
-                </div> <!-- recommendations-and-platlist -->
-
-            </div>  <!-- main-section -->
-
-        </main>
+    <!--    **********************************   footer   ************************************    -->
 
 
-        <!--    **********************************   footer   ************************************    -->
+    <footer>
+
+      <div class="footercontent">
+
+        <div class="swiper-buttons">
+          <button type="button" class="next-prev is_active"> <img src="images/prev.png" alt="previous" width="20" height="20"> </button>
+          <button type="button" class="play-button is_active"> <img src="images/play.png" alt="play" width="27" height="27"> </button>
+          <button type="button" class="next-prev is_active"> <img src="images/next.png" alt="next" width="20" height="20"> </button>
+        </div>
+
+        <div class="volume-block">
+          <img src="images/vol0.png" alt="volume -" width="6" height="9">
+
+          <div class="volume-range">
+            <div class="volume-blue-part"> <div class="volume-slider"></div> </div>
+          </div>
+
+          <img src="images/vol100.png" alt="volume +" width="12" height="10">
+        </div>
 
 
-        <footer>
+        <div class="song-name-block">
+          <p class="song-author">Digit All Love</p>
+          <div class="song-name">Promenade D'adieu Au Point Promenade D'adieu Au Point</div>
+          <p class="song-duration">(3:55)</p>
+        </div>
 
-            <div class="footercontent">
+        <!-- <div class="controller-block">
+             <div class="controller-range">
+                 <div class="controller-blue-part"> <div class="controller-slider"></div> </div>
+             </div>
+         </div>
 
-                <div class="swiper-buttons">
-                    <button type="button" class="next-prev is_active"> <img src="images/prev.png" alt="previous" width="20" height="20"> </button>
-                    <button type="button" class="play-button is_active"> <img src="images/play.png" alt="play" width="27" height="27"> </button>
-                    <button type="button" class="next-prev is_active"> <img src="images/next.png" alt="next" width="20" height="20"> </button>
-                </div>
+         <div class="player-preferences">
+             <button type="button" class="is_active-all-buttons-active"> <img src="images/player-preferences.png" alt="player-preferences"> </button>
+         </div>-->
 
-                <div class="controller-block">
-                    <img src="images/vol0.png" alt="volume -" width="6" height="9">
+      </div>
+    </footer>
 
-                    <div class="controller-range">
-                        <div class="blue-part"> <div class="slider"></div> </div>
-                    </div>
-
-                    <img src="images/vol100.png" alt="volume +" width="12" height="10">
-                </div>
-
-
-
-                    <!--<div class="song-name-block">
-                        <p class="song-author">Digit All Love</p>
-                        <div class="song-name">Promenade D'adieu Au Point Promenade D'adieu Au Point</div>
-                        <p class="song-duration">(3:55)</p>
-                        <button type="button" class="is_active-all-buttons-active"> <img src="images/button-linker.png" alt="open song list" class="song-name-linker"> </button>
-                    </div>
-
-                    <div class="player-preferences">
-                        <button type="button" class="is_active-all-buttons-active"> <img src="images/player-preferences.png" alt="player-preferences"> </button>
-                    </div>-->
-
-            </div>
-        </footer>
-
-    </body>
+  </body>
 
 </html>
