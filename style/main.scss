@@ -494,7 +494,7 @@ footer {
   width: auto;
   font-size: 10px;
   font-weight: 600;
-  margin: 0 8px;
+  margin: 0 18px;
 }
 
 .song-name {
@@ -535,6 +535,7 @@ footer {
 .controller-block {
   width: 100%;
   position: relative;
+  margin: 0 16px;
   border-bottom: 1px solid #191919;
   height: 23px;
 }
@@ -544,7 +545,6 @@ footer {
   background-color: var(--white);
   width: 100%;
   height: 11px;
-  margin: 6px auto 0 auto;
 }
 
 .controller-blue-part {
