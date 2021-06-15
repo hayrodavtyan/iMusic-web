@@ -438,7 +438,9 @@ footer {
   align-items: center;
   width: 112px;
   height: 80%;
-  border-bottom: 1px solid #191919;
+  border-right-width: 2px;
+  border-right-style: groove;
+  border-color: rgba(100,100,100,0.7);
 
   img {
     margin: 0 3px;
@@ -472,24 +474,33 @@ footer {
 }
 
 
-.song-name-block {
+
+.name-and-controller {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
   width: 52%;
-  border: 1px solid var(--grey);
-  padding: 6px 10px;
-  position: relative;
-  background-color: #343434;
   color: $white;
   outline: 1px dotted cyan;
 }
 
+.song-name-block {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
 .song-author {
-  font: 600 10px "Open sans", sans-serif;
-  margin: 5px 3px 4px 3px;
+  width: auto;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 0 8px;
 }
 
 .song-name {
-  width: calc(100% - 55px);
-  font: 10px "Open sans", sans-serif;
+  width: auto;
+  font-size: 10px;
+  font-weight: 300;
   margin: 0 3px;
   display: inline-block;
   white-space: nowrap;
@@ -519,40 +530,42 @@ footer {
 }
 
 
-/*.controller-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 80%;
+
+
+.controller-block {
+  width: 100%;
+  position: relative;
   border-bottom: 1px solid #191919;
+  height: 23px;
 }
 
 .controller-range {
-  position: relative;
-  width: 52px;
-  height: 3px;
-  background-color: $white;
-  border-radius: 10px;
+  border: 4px solid black;
+  background-color: var(--white);
+  width: 100%;
+  height: 11px;
+  margin: 6px auto 0 auto;
 }
 
 .controller-blue-part {
   height: 100%;
-  width: 70%;
+  width: 49%;
   background-color: #008bdd;
-  border-radius: 10px;
 }
 
 .controller-slider {
-  position: absolute;
-  left: 70%;
-  transform: translate(-4px, -2px);
-  width: 8px;
-  height: 8px;
+  width: 20px;
+  height: 20px;
   border-radius: 100%;
-  border: 3px solid #93cdec;
+  border: 2px solid #93cdec;
   background-color: #008bdd;
-}*/
+  position: absolute;
+  top: -5px;
+  left: 48%;
+}
+
+
+
 
 
 .player-preferences {
