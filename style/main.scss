@@ -479,7 +479,7 @@ footer {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  width: 52%;
+  width: 57.7%;
   color: $white;
   outline: 1px dotted cyan;
 }
@@ -492,16 +492,14 @@ footer {
 
 .song-author {
   width: auto;
-  font-size: 10px;
-  font-weight: 600;
-  margin: 0 18px;
+  margin: 0 0 0 18px;
+  font: 600 10px "Open Sans", sans-serif;
 }
 
 .song-name {
   width: auto;
-  font-size: 10px;
-  font-weight: 300;
-  margin: 0 3px;
+  font: 300 10px "Open Sans", sans-serif;
+  margin: 0;
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
@@ -532,8 +530,9 @@ footer {
 
 
 
+
 .controller-block {
-  width: 100%;
+  width: 89%;
   position: relative;
   margin: 0 16px;
   border-bottom: 1px solid #191919;
@@ -549,19 +548,40 @@ footer {
 
 .controller-blue-part {
   height: 100%;
-  width: 49%;
+  width: 75%;
   background-color: #008bdd;
 }
 
 .controller-slider {
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  border: 2px solid #93cdec;
-  background-color: #008bdd;
   position: absolute;
-  top: -5px;
-  left: 48%;
+  left: 75%;
+  transform: translate(-4px, -2px);
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  border: 3px solid #93cdec;
+  background-color: #008bdd;
+  z-index: 100;
+}
+
+
+.track-time {
+  position: absolute;
+  top: -36px;
+  right: 160px;
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 43px;
+  background-image: url("../images/track-time-bg.png");
+  z-index: 99;
+
+  p {
+    margin: 10px auto;
+    font-size: 11px;
+    font-weight: 600;
+    color: $darker;
+  }
 }
 
 
