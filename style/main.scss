@@ -26,7 +26,7 @@ body {
 }
 
 header, nav, main, footer {
-  border: 1px dotted tomato;
+  //border: 1px dotted tomato;
   margin: 0;
 }
 
@@ -62,6 +62,7 @@ header {
   font: 400 1rem "Open sans", sans-serif;
   border-bottom: 3px solid $blue;
   background-color: $darkgrey;
+  z-index: 100;
 }
 
 .authorisation-block {
@@ -203,6 +204,7 @@ nav {
 main {
   grid-area: main;
   background: $lightgrey;
+  z-index: 99;
 }
 
 .main-section {
@@ -390,6 +392,14 @@ main {
 
 
 
+.current-album-cover {
+    transform: translate(6px, 123px);
+    border: 7px solid $darker;
+    border-radius: 7px;
+}
+
+
+
 /* *****************************************   footer   ************************************************ */
 
 
@@ -407,7 +417,6 @@ footer {
   height: 60%;
   margin: 10px 10px ;
   background-color: $darker;
-  border: 1px dashed gold;
 }
 
 .swiper-buttons {
@@ -534,6 +543,7 @@ footer {
 
 
 
+
 .controller-block {
   width: 100%;
   position: relative;
@@ -610,8 +620,9 @@ footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 6%;
+  width: 6.2%;
   height: 80%;
+  padding: 0 8px;
   border-right-width: 2px;
   border-right-style: groove;
   border-color: rgba(100,100,100,0.7);
@@ -620,4 +631,43 @@ footer {
     border: none;
     background-color: transparent;
   }
+}
+
+
+
+.is_add-to-playlist {
+  display: inline-block;
+  width: 4%;
+  height: 80%;
+  padding: 8px;
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+  background-color: transparent;
+  border-right-width: 2px;
+  border-right-style: groove;
+  border-color: rgba(100,100,100,0.7);
+}
+
+
+.now-playing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16.3%;
+  height: 80%;
+  background-color: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+  border-right-width: 2px;
+  border-right-style: groove;
+  border-color: rgba(100,100,100,0.7);
+
+  p {
+    margin: 0 20px 0 0;
+    font: 300 20px "open sans", sans-serif;
+    color: grey;
+  }
+
 }
