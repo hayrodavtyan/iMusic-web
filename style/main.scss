@@ -231,6 +231,9 @@ main {
 }
 
 
+
+
+
 .album-info {
   width: 100%;
   display: flex;
@@ -241,7 +244,12 @@ main {
   border-bottom-width: 2px;
   border-bottom-style: groove;
   border-color: rgba(100,100,100,0.7);
+
+  > img {
+    margin-right: 15px;
+  }
 }
+
 
 .more-group-images {
   display: grid;
@@ -275,6 +283,15 @@ main {
 }
 
 
+
+@media only screen and (max-width: 1406px) {
+  .group-biography {
+    height: 150px;
+  }
+}
+
+
+
 .recommendations-and-playlist {
   position: relative;
   height: 320px;
@@ -302,6 +319,23 @@ main {
     margin: 10px 7px;
     padding: 0;
     border: 15px solid $darkgrey;
+  }
+}
+
+
+@media only screen and (max-width: 1497px) {
+  .recommendations {
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1051px) {
+  .recommendations-and-playlist {
+    height: 400px;
   }
 }
 
@@ -392,12 +426,65 @@ main {
 
 
 
-.current-album-cover {
-    transform: translate(6px, 123px);
-    border: 7px solid $darker;
-    border-radius: 7px;
+@media only screen and (max-width: 1326px) {
+
+  .album-info {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .more-group-images {
+    margin-right: 0;
+  }
+
+  .group-biography {
+    width: 76%;
+    height: auto;
+    margin: 20px 0 0 0;
+    text-align: justify;
+
+    button {
+      position: static;
+    }
+  } 
+
+  .recommendations {
+    img {
+      width: 90px;
+      height: 90px;
+      border-width: 6px;
+    }
+  }
 }
 
+
+@media only screen and (max-width: 1161px) {
+
+  .nav-title {
+    flex-direction: column;
+    top: 145px;
+    left: 20%;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .group-biography {
+    width: 82%;
+  }
+
+
+  .recommendations {
+    top: 70px;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-width: 6px;
+    }
+  }
+}
 
 
 /* *****************************************   footer   ************************************************ */
@@ -406,11 +493,14 @@ main {
 
 footer {
   grid-area: footer;
+  position: relative;
   background-color: $darkgrey;
 }
 
+
 .footercontent {
-  display: flex;
+  position: absolute;
+  display: inline-flex;
   justify-content: flex-start;
   align-items: center;
   width: 98%;
@@ -485,18 +575,29 @@ footer {
 
 
 .name-and-controller {
+  position: relative;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   width: 57.7%;
-  //height: 80%;
+  height: 80%;
   color: $white;
   border-right-width: 2px;
   border-right-style: groove;
   border-color: rgba(100,100,100,0.7);
 }
 
+.current-album-cover {
+  position: absolute;
+  top: -132%;
+  left: 11px;
+  border: 7px solid $darker;
+  border-radius: 7px;
+  z-index: 100;
+}
+
 .song-name-block {
+  position: absolute;
   display: flex;
   justify-content: flex-start;
   width: 100%;
@@ -547,7 +648,7 @@ footer {
 .controller-block {
   width: 100%;
   position: relative;
-  margin: 0 16px;
+  margin: 15px 16px 0 16px;
   border-bottom: 1px solid #191919;
   height: 23px;
 }
@@ -581,7 +682,8 @@ footer {
 .track-time {
   position: absolute;
   top: -36px;
-  left: 63.2%;
+  left: 66.5%;
+  transform: translateX(-29px);
   display: flex;
   justify-content: center;
   width: 60px;
@@ -670,4 +772,11 @@ footer {
     color: grey;
   }
 
-}
+
+  @media only screen and (max-width: 1161px) {
+    .now-playing {
+      p {
+        font-size: 10px;
+      }
+    }
+  }
