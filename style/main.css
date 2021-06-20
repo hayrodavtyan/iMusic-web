@@ -1,17 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap");
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  display: -ms-grid;
   display: grid;
-      grid-template-areas: ". header ." "nav main main" "footer footer footer";
-  -ms-grid-columns: 16.5% 63% 1fr;
-      grid-template-columns: 16.5% 63% 1fr;
-  -ms-grid-rows: 25px 772px 87px;
-      grid-template-rows: 25px 772px 87px;
+  grid-template-areas: ". header ." "nav main main" "footer footer footer";
+  grid-template-columns: 16.5% 63% 1fr;
+  grid-template-rows: 25px 772px 87px;
   grid-gap: 0;
   background-color: #424242;
   padding: 0;
@@ -24,28 +20,15 @@ header, nav, main, footer {
 }
 
 header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: header;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .header-navigation ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -55,7 +38,7 @@ header {
   /*width: 90px;*/
   padding: 2px 27px;
   color: #dbdbdb;
-  font: 300 .8rem "Open Sans";
+  font: 300 0.8rem "Open Sans";
   text-align: center;
   border-right-width: 2px;
   border-right-style: groove;
@@ -72,17 +55,13 @@ header {
 }
 
 .authorisation-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .authorisation-block > p, a {
   color: #dbdbdb;
-  font: .7rem "Open Sans";
+  font: 0.7rem "Open Sans";
   margin: 0;
   padding: 2px 5px;
 }
@@ -94,12 +73,9 @@ header {
 
 /* ********************************    nav   ********************************* */
 nav {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
   grid-area: nav;
   position: relative;
   background: #2b2b2b;
-  background: -webkit-gradient(linear, left bottom, left top, from(#2b2b2b), to(#424242));
   background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
 }
 
@@ -108,27 +84,18 @@ nav {
   top: 18px;
   left: 33%;
   margin: 0;
-  -webkit-transform: translateX(-15px);
-          transform: translateX(-15px);
+  transform: translateX(-15px);
 }
 
 .nav-title {
   position: absolute;
   top: 165px;
   left: 9%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transform: translate(0, -18px);
-          transform: translate(0, -18px);
+  justify-content: space-between;
+  align-items: center;
+  transform: translate(0, -18px);
 }
-
 .nav-title p {
   margin: 0 0 0 17px;
   font: 300 1.7rem "Open Sans", sans-serif;
@@ -143,7 +110,6 @@ nav {
   list-style-image: url("../images/folder-grey.png");
   padding: 0;
 }
-
 .side-nav-items li {
   list-style-position: inside;
   padding: 16px 0;
@@ -153,11 +119,9 @@ nav {
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .side-nav-items li span {
   padding-left: 10px;
 }
-
 .side-nav-items :nth-child(2) {
   list-style: none;
   padding: 0;
@@ -168,11 +132,10 @@ nav {
   margin: 0;
   list-style-type: none;
 }
-
 .side-pseudo-nav li {
   margin-left: 25px;
   padding: 10px 0;
-  font-size: .8rem;
+  font-size: 0.8rem;
   border: none;
 }
 
@@ -194,19 +157,16 @@ nav {
   padding: 0;
   background: #1d1d1d;
 }
-
 .nav-bottom-info p {
   margin: 5px 0;
   text-align: center;
-  font-size: .6rem;
+  font-size: 0.6rem;
   color: #dbdbdb;
 }
-
 .nav-bottom-info :nth-child(3) {
   margin: 10px 0;
   text-transform: capitalize;
 }
-
 .nav-bottom-info div {
   width: 90%;
   margin: 0 auto;
@@ -216,9 +176,6 @@ nav {
 
 /* ***********************************    main    ************************************ */
 main {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
   grid-area: main;
   background: #606060;
   z-index: 99;
@@ -239,7 +196,6 @@ main {
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .playlist-title h1 {
   margin: 0;
   font-size: 1.7rem;
@@ -249,31 +205,22 @@ main {
 
 .album-info {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 13px 10px;
   margin: 0;
   border-bottom-width: 2px;
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .album-info > img {
   margin-right: 15px;
 }
 
 .more-group-images {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
   grid-column-gap: 11px;
   grid-row-gap: 5px;
   margin-right: 25px;
@@ -291,7 +238,6 @@ main {
   overflow: hidden;
   text-overflow: clip;
 }
-
 .group-biography button {
   position: absolute;
   bottom: 0;
@@ -307,7 +253,6 @@ main {
     height: 150px;
   }
 }
-
 .recommendations-and-playlist {
   position: relative;
   height: 320px;
@@ -315,7 +260,6 @@ main {
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .recommendations-and-playlist p {
   position: absolute;
   margin: 13px 13px 7px 13px;
@@ -325,16 +269,11 @@ main {
 .recommendations {
   position: absolute;
   top: 40px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
   width: 58%;
 }
-
 .recommendations img {
   margin: 10px 7px;
   padding: 0;
@@ -347,13 +286,11 @@ main {
     height: 100px;
   }
 }
-
 @media only screen and (max-width: 1051px) {
   .recommendations-and-playlist {
     height: 400px;
   }
 }
-
 .playlist {
   position: absolute;
   top: 0;
@@ -363,35 +300,30 @@ main {
   font-size: 1.3rem;
   color: #dbdbdb;
 }
-
 .playlist ol {
   padding: 0;
   margin: 5px 0 0 0;
   list-style-position: inside;
 }
-
 .playlist ol li {
   position: relative;
   padding: 0;
   height: 27px;
 }
-
 .playlist ol li a {
   vertical-align: middle;
   margin: 0 7px 9px 7px;
 }
-
 .playlist ol li p {
   position: absolute;
   right: 37px;
   display: inline-block;
   width: 35px;
   margin: 8px 0 0 0;
-  font-size: .75rem;
+  font-size: 0.75rem;
   vertical-align: middle;
   text-align: center;
 }
-
 .playlist ol li button {
   position: absolute;
   right: 0;
@@ -399,12 +331,10 @@ main {
   background-color: transparent;
   border: none;
 }
-
 .playlist ol li::marker {
   color: #dbdbdb;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
-
 .playlist ol li:hover {
   background-color: #008bdc;
 }
@@ -419,17 +349,12 @@ main {
   margin: 7px 0;
   position: absolute;
   right: 35px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   padding: 0;
   list-style-type: none;
   font-weight: 300;
 }
-
 .playlist-pages li a {
   padding: 0 1.8px;
   text-decoration: none;
@@ -442,15 +367,14 @@ main {
 
 @media only screen and (max-width: 1326px) {
   .album-info {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
+
   .more-group-images {
     margin-right: 0;
   }
+
   .group-biography {
     width: 76%;
     height: auto;
@@ -460,43 +384,15 @@ main {
   .group-biography button {
     position: static;
   }
+
   .recommendations img {
     width: 90px;
     height: 90px;
     border-width: 6px;
   }
 }
-
-@media only screen and (max-width: 1161px) {
-  .nav-title {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    top: 145px;
-    left: 20%;
-  }
-  .nav-title p {
-    margin: 0;
-  }
-  .group-biography {
-    width: 82%;
-  }
-  .recommendations {
-    top: 70px;
-  }
-  .recommendations img {
-    width: 80px;
-    height: 80px;
-    border-width: 6px;
-  }
-}
-
 /* *****************************************   footer   ************************************************ */
 footer {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: footer;
   position: relative;
   background-color: #2b2b2b;
@@ -504,15 +400,9 @@ footer {
 
 .footercontent {
   position: absolute;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-start;
+  align-items: center;
   width: 98%;
   height: 60%;
   margin: 10px 10px;
@@ -522,15 +412,9 @@ footer {
 .swiper-buttons {
   width: 122px;
   height: 80%;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   padding: 0 10px;
   border-right-width: 2px;
   border-right-style: groove;
@@ -546,22 +430,15 @@ footer {
 }
 
 .volume-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 112px;
   height: 80%;
   border-right-width: 2px;
   border-right-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .volume-block img {
   margin: 0 3px;
 }
@@ -584,8 +461,7 @@ footer {
 .volume-slider {
   position: absolute;
   left: 70%;
-  -webkit-transform: translate(-4px, -2px);
-          transform: translate(-4px, -2px);
+  transform: translate(-4px, -2px);
   width: 8px;
   height: 8px;
   border-radius: 100%;
@@ -595,16 +471,9 @@ footer {
 
 .name-and-controller {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: flex-start;
+  flex-direction: column;
   width: 57.7%;
   height: 80%;
   color: #dbdbdb;
@@ -624,12 +493,8 @@ footer {
 
 .song-name-block {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -637,7 +502,7 @@ footer {
   width: auto;
   margin: 0 0 0 18px;
   font: 600 10px "Open Sans", sans-serif;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 }
 
 .song-name {
@@ -645,7 +510,7 @@ footer {
   width: 150px;
   margin: 0;
   font: 300 10px "Open Sans", sans-serif;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -653,7 +518,7 @@ footer {
 
 .song-duration {
   margin: 0 5px;
-  font: 10px "Open sans",sans-serif;
+  font: 10px "Open sans", sans-serif;
 }
 
 .song-name-block button {
@@ -694,8 +559,7 @@ footer {
 .controller-slider {
   position: absolute;
   left: 66.5%;
-  -webkit-transform: translate(-4px, -2px);
-          transform: translate(-4px, -2px);
+  transform: translate(-4px, -2px);
   width: 8px;
   height: 8px;
   border-radius: 100%;
@@ -708,20 +572,14 @@ footer {
   position: absolute;
   top: -36px;
   left: 66.5%;
-  -webkit-transform: translateX(-29px);
-          transform: translateX(-29px);
-  display: -webkit-box;
-  display: -ms-flexbox;
+  transform: translateX(-29px);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 60px;
   height: 43px;
   background-image: url("../images/track-time-bg.png");
   z-index: 99;
 }
-
 .track-time p {
   margin: 10px auto;
   font-size: 11px;
@@ -738,22 +596,15 @@ footer {
   padding: 0 12px;
   background-color: #1d1d1d;
 }
-
 .side-track-time p {
   margin: 0;
   font-size: 9px;
 }
 
 .shuffle-repeat {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   width: 6.2%;
   height: 80%;
   padding: 0 8px;
@@ -761,7 +612,6 @@ footer {
   border-right-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .shuffle-repeat button {
   border: none;
   background-color: transparent;
@@ -782,15 +632,9 @@ footer {
 }
 
 .now-playing {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 16.3%;
   height: 80%;
   background-color: transparent;
@@ -801,10 +645,50 @@ footer {
   border-right-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .now-playing p {
   margin: 0 20px 0 0;
   font: 300 20px "open sans", sans-serif;
   color: grey;
 }
+
+/* ******************************************   media queries   ************************************** */
+@media only screen and (max-width: 1177px) {
+  .nav-title {
+    flex-direction: column;
+    top: 145px;
+    left: 20%;
+  }
+  .nav-title p {
+    margin: 0;
+  }
+
+  .group-biography {
+    width: 82%;
+  }
+
+  .recommendations-and-playlist {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recommendations {
+    position: static;
+  }
+  .recommendations img {
+    width: 80px;
+    height: 80px;
+    border-width: 6px;
+  }
+
+  .playlist {
+    position: static;
+  }
+
+  .now-playing p {
+    font-size: 15px;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -458,35 +458,6 @@ main {
 }
 
 
-@media only screen and (max-width: 1161px) {
-
-  .nav-title {
-    flex-direction: column;
-    top: 145px;
-    left: 20%;
-
-    p {
-      margin: 0;
-    }
-  }
-
-  .group-biography {
-    width: 82%;
-  }
-
-
-  .recommendations {
-    top: 70px;
-
-    img {
-      width: 80px;
-      height: 80px;
-      border-width: 6px;
-    }
-  }
-}
-
-
 /* *****************************************   footer   ************************************************ */
 
 
@@ -764,19 +735,60 @@ footer {
   border-bottom: 0;
   border-right-width: 2px;
   border-right-style: groove;
-  border-color: rgba(100,100,100,0.7);
+  border-color: rgba(100, 100, 100, 0.7);
 
   p {
     margin: 0 20px 0 0;
     font: 300 20px "open sans", sans-serif;
     color: grey;
   }
+}
 
 
-  @media only screen and (max-width: 1161px) {
-    .now-playing {
-      p {
-        font-size: 10px;
-      }
+
+/* ******************************************   media queries   ************************************** */
+
+
+@media only screen and (max-width: 1177px) {
+
+  .nav-title {
+    flex-direction: column;
+    top: 145px;
+    left: 20%;
+
+    p {
+      margin: 0;
     }
   }
+
+  .group-biography {
+    width: 82%;
+  }
+
+  .recommendations-and-playlist {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recommendations {
+    position: static;
+
+    img {
+      width: 80px;
+      height: 80px; 
+      border-width: 6px;
+    }
+  }
+
+  .playlist {
+    position: static;
+  }
+
+  .now-playing {
+    p {
+      font-size: 15px;
+    }
+  }
+}
