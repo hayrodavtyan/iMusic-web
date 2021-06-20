@@ -310,6 +310,7 @@ main {
 .recommendations {
   position: absolute;
   top: 40px;
+  left: 5px;
   display: inline-flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -691,11 +692,11 @@ footer {
 
 .shuffle-repeat {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   width: 6.2%;
   height: 80%;
-  padding: 0 8px;
+  padding: 0 5px;
   border-right-width: 2px;
   border-right-style: groove;
   border-color: rgba(100,100,100,0.7);
@@ -703,23 +704,58 @@ footer {
   button {
     border: none;
     background-color: transparent;
+    padding: 0;
   }
 }
 
 
-
-.is_add-to-playlist {
+.adding-to-playlists {
+  position: relative;
   display: inline-block;
   width: 4%;
   height: 80%;
+
+  ul {
+    position: absolute;
+    top: -420%;
+    left: -80%;
+    width: 148px;
+    height: 160px;
+    padding: 7px 10px;
+    margin: 0;
+    list-style-type: none;
+    z-index: 101;
+    background-color: $darkgrey;
+  }
+
+  li {
+    padding: 6px 0;
+    // outline: 1px dashed gold;
+    border-bottom-width: 2px;
+    border-bottom-style: groove;
+    border-color: rgba(100,100,100,0.7);
+  }
+
+  button {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: $white;
+  }
+}
+
+
+.is_add-to-playlist {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   padding: 8px;
   border-top: 0;
   border-left: 0;
   border-bottom: 0;
   background-color: transparent;
-  border-right-width: 2px;
-  border-right-style: groove;
-  border-color: rgba(100,100,100,0.7);
 }
 
 
@@ -731,10 +767,10 @@ footer {
   height: 80%;
   background-color: transparent;
   border-top: 0;
-  border-left: 0;
   border-bottom: 0;
   border-right-width: 2px;
-  border-right-style: groove;
+  border-left-width: 2px;
+  border-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 
   p {
@@ -749,6 +785,7 @@ footer {
 /* ******************************************   media queries   ************************************** */
 
 
+
 @media only screen and (max-width: 1177px) {
 
   .nav-title {
@@ -761,8 +798,13 @@ footer {
     }
   }
 
+  .main-section {
+    width: 90%;
+  }
+
   .group-biography {
-    width: 82%;
+    padding-left: 20px;
+    width: 30%;
   }
 
   .recommendations-and-playlist {
@@ -770,20 +812,39 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    height: 460px;
+
+    p {
+      position: static;
+    }
   }
 
   .recommendations {
     position: static;
+    width: 95%;
+    margin: 0 auto;
+    outline: 1px dashed cyan;
 
     img {
-      width: 80px;
-      height: 80px; 
+      width: 70px;
+      height: 70px; 
       border-width: 6px;
     }
   }
 
   .playlist {
     position: static;
+    width: 95%;
+    padding-left: 20px;
+    margin: 0 auto;
+  }
+
+  .playlist-pages {
+    right: 100px;
+  }
+
+  .shuffle-repeat {
+    padding: 0;
   }
 
   .now-playing {
