@@ -15,7 +15,7 @@
       <div class="header-navigation">
         <ul>
           <li>music</li>
-          <li id="is_emphasized-header-item">radio</li>
+          <li class="is_emphasized-header-item">radio</li>
           <li>library</li>
           <li>charts</li>
         </ul>
@@ -25,31 +25,42 @@
         <p>Hi, George!</p>
         <a href="javascript:void(0);"><u> Logout </u></a>
       </div>
+
+      <div class="empty-box"></div>
+
     </header>
 
-    <!--    *********************************   nav   ************************************    -->
+  
+
 
     <nav>
-      <img class="main-logo" src="images/logo.png" alt="iMusic Logo" width="87" height="67">
+      <a href="javascript:void(0);" class="main-logo"> <img src="images/logo.png" alt="iMusic Logo" width="87" height="70"> </a>
 
-      <div class="nav-title">
-        <img src="images/profile-info.png" alt="profile info" width="36" height="27">
-        <p> my library </p>
+      <div class="centered-content">
+
+        <div class="nav-title">
+          <img src="images/profile-info.png" alt="profile info" width="36" height="27">
+          <p> my library </p>
+        </div>
+
+        <ul class="side-nav-items">
+          <li id="is_emphasized-side-item"> <span> playlists </span> </li>
+          <li>
+            <ul class="side-pseudo-nav">
+              <li>my playlist 1</li>
+              <li>my playlist 2</li>
+              <li>my playlist 3</li>
+            </ul>
+          </li>
+          <li><span> my mp3 </span></li>
+          <li><span> tracks </span></li>
+          <li><span> favorites </span></li>
+          <li><span> genres </span></li>
+          <li><span> collections </span></li>
+          <li><span> TOP-100 </span></li>
+        </ul>
+
       </div>
-
-      <ul class="side-nav-items">
-        <li id="is_emphasized-side-item"> <span> playlists </span> </li>
-        <li>
-          <ul class="side-pseudo-nav">
-            <li>my playlist 1</li>
-            <li>my playlist 2</li>
-            <li>my playlist 3</li>
-          </ul>
-        </li>
-        <li><span> my mp3 </span></li>
-        <li><span> tracks </span></li>
-        <li><span> favorites </span></li>
-      </ul>
 
       <div class="nav-bottom-info">
         <p>iMusic.am <b>Radio</b> live:</p>
@@ -59,9 +70,10 @@
 
     </nav>
 
+    <div class="right-frame"></div>
 
-    <!--    *********************************   main   ************************************    -->
 
+  <!--
 
     <main>
 
@@ -124,34 +136,34 @@
             </ul>
 
           </div>
-        </div> <!-- recommendations-and-platlist -->
+        </div> 
 
-      </div>  <!-- main-section -->
+      </div>  
 
     </main>
 
-
-    <!--    **********************************   footer   ************************************    -->
-
+    -->
 
     <footer>
 
       <div class="footercontent">
 
         <div class="swiper-buttons">
-          <button type="button" class="next-prev is_active"> <img src="images/prev.png" alt="previous" width="20" height="20"> </button>
-          <button type="button" class="play-button is_active"> <img src="images/play.png" alt="play" width="27" height="27"> </button>
-          <button type="button" class="next-prev is_active"> <img src="images/next.png" alt="next" width="20" height="20"> </button>
+          <button type="button" class="prev-swiper-button is_active">  </button>
+          <button type="button" class="play-button is_active">  </button>
+          <button type="button" class="next-swiper-button is_active">  </button>
         </div>
 
         <div class="volume-block">
-          <img src="images/vol0.png" alt="volume -" width="6" height="9">
+          <!-- <img src="images/vol0.png" alt="volume -" width="6" height="9"> -->
+          <button type="button" class="volume-low"> </button>
 
           <div class="volume-range">
             <div class="volume-blue-part"> <div class="volume-slider"></div> </div>
           </div>
 
-          <img src="images/vol100.png" alt="volume +" width="12" height="10">
+          <!-- <img src="images/vol100.png" alt="volume +" width="12" height="10"> -->
+          <button type="button" class="volume-high"> </button>
         </div>
 
 
@@ -205,7 +217,7 @@
         </button>
 
       </div>
-    </footer>
+    </footer> 
 
   </body>
 

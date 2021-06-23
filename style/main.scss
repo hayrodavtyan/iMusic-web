@@ -12,14 +12,15 @@ $blue: #008bdc;
 }
 
 body {
-  display: grid;
-  grid-template-areas: ". header ."
-                         "nav main main"
-                         "footer footer footer";
-  grid-template-columns: 16.5% 63% 1fr;
-  grid-template-rows: 25px 772px 87px;
-  grid-gap: 0;
-  background-color: $grey;
+  position: relative;
+  // display: grid;
+  // grid-template-areas: ". header ."
+  //                        "nav main main"
+  //                        "footer footer footer";
+  // grid-template-columns: 16.5% 63% 1fr;
+  // grid-template-rows: 25px 772px 87px;
+  // grid-gap: 0;
+  background-color: $lightgrey;
   padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
@@ -30,10 +31,27 @@ header, nav, main, footer {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+  transition: transform .3s;
+
+  &:hover {
+    transition: transform .1s;
+	  transform: scale(1.1,1.1);
+  }
+}
+
 header {
-  grid-area: header;
-  display: flex;
+  // grid-area: header;
+  position: fixed;
+  top: 0;
+  left: 16.5vw;
+  display: inline-flex;
   justify-content: space-between;
+  width: 63%;
+  height: auto;
+  background-color: $grey;
+  z-index: 100;
 }
 
 .header-navigation ul {
@@ -43,11 +61,11 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
+  z-index: 100;
 }
 
 .header-navigation li {
-  /*width: 90px;*/
-  padding: 2px 27px;
+  padding: 3px 27px;
   color: $white;
   font: 300 .8rem "Open Sans";
   text-align: center;
@@ -55,19 +73,23 @@ header {
   border-right-style: groove;
   border-color: rgba(100,100,100,0.7);
   cursor: pointer;
+  z-index: 100;
+
+  &.is_emphasized-header-item {
+    padding: 1px 36px;
+    font: 400 1rem "Open sans", sans-serif;
+    border-bottom: 3px solid $blue;
+    background-color: $darkgrey;
+    z-index: 100;
+  }
 }
 
-#is_emphasized-header-item {
-  padding: 2px 36px;
-  font: 400 1rem "Open sans", sans-serif;
-  border-bottom: 3px solid $blue;
-  background-color: $darkgrey;
-  z-index: 100;
-}
 
 .authorisation-block {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  z-index: 100;
 }
 
 .authorisation-block > p, a {
@@ -75,6 +97,7 @@ header {
   font: .7rem "Open Sans";
   margin: 0;
   padding: 2px 5px;
+  z-index: 100;
 }
 
 .authorisation-block > p {
@@ -83,33 +106,51 @@ header {
 }
 
 
+.empty-box {
+  position: fixed;
+  top: 0;
+  left: 16.5vw;
+  background-color: $grey;
+  width: 100%;
+  height: 27px;
+  // z-index: 10;
+}
+
+
 /* ********************************    nav   ********************************* */
 
 
 
 nav {
-  grid-area: nav;
-  position: relative;
-  background: rgb(43,43,43);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 16.5vw;
+  height: 90vh;
   background: linear-gradient(0deg, rgba(43,43,43,1) 0%, rgba(66,66,66,1) 100%);
 }
 
 .main-logo {
-  position: absolute;
-  top: 18px;
-  left: 33%;
-  margin: 0;
-  transform: translateX(-15px);
+  margin-top: 40px;
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .nav-title {
-  position: absolute;
-  top: 165px;
-  left: 9%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  transform: translate(0, -18px);
+  // transform: translateY(48px);
 
   p {
     margin: 0 0 0 17px;
@@ -119,21 +160,29 @@ nav {
 }
 
 .side-nav-items {
-  position: absolute;
-  top: 186px;
-  right: 0;
-  width: 80%;
+  align-self: flex-end;
+  width: 90%;
+  height: 44vh;
   list-style-image: url("../images/folder-grey.png");
   padding: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   li {
     list-style-position: inside;
-    padding: 16px 0;
+    padding: 16px 25px;
+    // padding-left: 20px;
     font-weight: 300;
     color: $white;
     border-bottom-width: 2px;
     border-bottom-style: groove;
     border-color: rgba(100,100,100,0.7);
+
 
     span {
       padding-left: 10px;
@@ -146,8 +195,9 @@ nav {
   }
 }
 
+
 .side-pseudo-nav {
-  padding: 0 0 3px 20px;
+  padding: 0 0 3px 45px;
   margin: 0;
   list-style-type: none;
 
@@ -170,9 +220,6 @@ nav {
 }
 
 .nav-bottom-info {
-  position: absolute;
-  bottom: 0;
-  left: 5%;
   width: 90%;
   padding: 0;
   background: $darker;
@@ -195,6 +242,16 @@ nav {
     border-top: 1px solid black;
     border-bottom: 1px solid $lightgrey;
   }
+}
+
+
+.right-frame {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 1vw;
+  height: 90vh;
+  background: linear-gradient(0deg, rgba(43,43,43,1) 0%, rgba(66,66,66,1) 100%);
 }
 
 
@@ -464,42 +521,71 @@ main {
 
 
 footer {
-  grid-area: footer;
-  position: relative;
+  // grid-area: footer;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
   background-color: $darkgrey;
 }
 
 
 .footercontent {
-  position: absolute;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
   width: 98%;
-  height: 60%;
-  margin: 10px 10px ;
+  height: 70%;
+  padding: 5px 0;
+  margin: 15px 10px;
   background-color: $darker;
 }
 
 .swiper-buttons {
-  width: 122px;
+  // width: 122px;
   height: 80%;
   display: inline-flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 16px;
   border-right-width: 2px;
   border-right-style: groove;
-  border-color: rgba(100,100,100,0.7);
+  border-color: rgba(71, 71, 71, 1);
 }
 
 .swiper-buttons button {
   padding: 0;
+  margin: 0 3px;
   background-color: transparent;
   border: none;
-  margin: 0 3px;
   border-radius: 100px;
 }
+
+.prev-swiper-button {
+  width: 21px;
+  height: 21px;
+  background-image: url(../images/prev.png);
+  background-size: 100% 100%;
+}
+
+.play-button {
+  width: 28px;
+  height: 28px;
+  background-image: url(../images/play.png);
+  background-size: cover;
+}
+
+.next-swiper-button {
+  width: 21px;
+  height: 21px;
+  background-image: url(../images/next.png);
+  background-size: 100% 100%;
+}
+
+
+
+
 
 
 
@@ -509,14 +595,35 @@ footer {
   align-items: center;
   width: 112px;
   height: 80%;
+  padding: 0 10px;
   border-right-width: 2px;
   border-right-style: groove;
-  border-color: rgba(100,100,100,0.7);
+  border-color: rgba(71, 71, 71, 1);
 
-  img {
-    margin: 0 3px;
+  button {
+    margin: 0 5px;
+    background-color: transparent;
+    border: none;
   }
 }
+
+.volume-low {
+  width: 6px;
+  height: 9px;
+  padding: 0;
+  background-image: url(../images/vol0.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.volume-high {
+  width: 12px;
+  height: 10px;
+  background-image: url(../images/vol100.png);
+  background-size: 12px 10px;
+  background-repeat: no-repeat;
+}
+
 
 .volume-range {
   position: relative;
@@ -546,23 +653,26 @@ footer {
 
 
 
+
+
+
 .name-and-controller {
   position: relative;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  width: 57.7%;
+  width: 100%;
   height: 80%;
   color: $white;
   border-right-width: 2px;
   border-right-style: groove;
-  border-color: rgba(100,100,100,0.7);
+  border-color: rgba(71, 71, 71, 1);
 }
 
 .current-album-cover {
   position: absolute;
-  top: -132%;
-  left: 11px;
+  top: -55px;
+  left: 14px;
   border: 7px solid $darker;
   border-radius: 7px;
   z-index: 100;
@@ -674,12 +784,12 @@ footer {
 
 .side-track-time {
   position: absolute;
-  bottom: 10px;
+  bottom: 6px;
   right: 30px;
   width: auto;
   height: auto;
   padding: 0 12px;
-  background-color: $darker;
+  background-color: black;
 
   p {
     margin: 0;
@@ -699,7 +809,7 @@ footer {
   padding: 0 5px;
   border-right-width: 2px;
   border-right-style: groove;
-  border-color: rgba(100,100,100,0.7);
+  border-color: rgba(71, 71, 71, 1);
 
   button {
     border: none;
@@ -717,7 +827,7 @@ footer {
 
   ul {
     position: absolute;
-    top: -420%;
+    top: -175px;
     left: -80%;
     width: 148px;
     height: 160px;
@@ -730,8 +840,6 @@ footer {
 
   li {
     padding: 6px 0;
-    // outline: 1px dashed gold;
-    border-bottom-width: 2px;
     border-bottom-style: groove;
     border-color: rgba(100,100,100,0.7);
   }
@@ -751,7 +859,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 8px;
+  // padding: 8px;
   border-top: 0;
   border-left: 0;
   border-bottom: 0;
@@ -771,7 +879,7 @@ footer {
   border-right-width: 2px;
   border-left-width: 2px;
   border-style: groove;
-  border-color: rgba(100, 100, 100, 0.7);
+  border-color: rgba(71, 71, 71, 1);
 
   p {
     margin: 0 20px 0 0;

@@ -5,15 +5,8 @@
 }
 
 body {
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: ". header ." "nav main main" "footer footer footer";
-  -ms-grid-columns: 16.5% 63% 1fr;
-      grid-template-columns: 16.5% 63% 1fr;
-  -ms-grid-rows: 25px 772px 87px;
-      grid-template-rows: 25px 772px 87px;
-  grid-gap: 0;
-  background-color: #424242;
+  position: relative;
+  background-color: #606060;
   padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
@@ -23,16 +16,37 @@ header, nav, main, footer {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+button:hover {
+  -webkit-transition: -webkit-transform .1s;
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
 header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: header;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: fixed;
+  top: 0;
+  left: 16.5vw;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 63%;
+  height: auto;
+  background-color: #424242;
+  z-index: 100;
 }
 
 .header-navigation ul {
@@ -49,11 +63,11 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
+  z-index: 100;
 }
 
 .header-navigation li {
-  /*width: 90px;*/
-  padding: 2px 27px;
+  padding: 3px 27px;
   color: #dbdbdb;
   font: 300 .8rem "Open Sans";
   text-align: center;
@@ -61,10 +75,11 @@ header {
   border-right-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
   cursor: pointer;
+  z-index: 100;
 }
 
-#is_emphasized-header-item {
-  padding: 2px 36px;
+.header-navigation li.is_emphasized-header-item {
+  padding: 1px 36px;
   font: 400 1rem "Open sans", sans-serif;
   border-bottom: 3px solid #008bdc;
   background-color: #2b2b2b;
@@ -78,6 +93,10 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 100;
 }
 
 .authorisation-block > p, a {
@@ -85,6 +104,7 @@ header {
   font: .7rem "Open Sans";
   margin: 0;
   padding: 2px 5px;
+  z-index: 100;
 }
 
 .authorisation-block > p {
@@ -92,41 +112,70 @@ header {
   font-weight: 600;
 }
 
+.empty-box {
+  position: fixed;
+  top: 0;
+  left: 16.5vw;
+  background-color: #424242;
+  width: 100%;
+  height: 27px;
+}
+
 /* ********************************    nav   ********************************* */
 nav {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: nav;
-  position: relative;
-  background: #2b2b2b;
-  background: -webkit-gradient(linear, left bottom, left top, from(#2b2b2b), to(#424242));
-  background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
-}
-
-.main-logo {
-  position: absolute;
-  top: 18px;
-  left: 33%;
-  margin: 0;
-  -webkit-transform: translateX(-15px);
-          transform: translateX(-15px);
-}
-
-.nav-title {
-  position: absolute;
-  top: 165px;
-  left: 9%;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transform: translate(0, -18px);
-          transform: translate(0, -18px);
+  width: 16.5vw;
+  height: 90vh;
+  background: -webkit-gradient(linear, left bottom, left top, from(#2b2b2b), to(#424242));
+  background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
+}
+
+.main-logo {
+  margin-top: 40px;
+}
+
+.centered-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.nav-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav-title p {
@@ -136,17 +185,24 @@ nav {
 }
 
 .side-nav-items {
-  position: absolute;
-  top: 186px;
-  right: 0;
-  width: 80%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 90%;
+  height: 44vh;
   list-style-image: url("../images/folder-grey.png");
   padding: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.side-nav-items::-webkit-scrollbar {
+  display: none;
 }
 
 .side-nav-items li {
   list-style-position: inside;
-  padding: 16px 0;
+  padding: 16px 25px;
   font-weight: 300;
   color: #dbdbdb;
   border-bottom-width: 2px;
@@ -164,7 +220,7 @@ nav {
 }
 
 .side-pseudo-nav {
-  padding: 0 0 3px 20px;
+  padding: 0 0 3px 45px;
   margin: 0;
   list-style-type: none;
 }
@@ -187,9 +243,6 @@ nav {
 }
 
 .nav-bottom-info {
-  position: absolute;
-  bottom: 0;
-  left: 5%;
   width: 90%;
   padding: 0;
   background: #1d1d1d;
@@ -214,11 +267,18 @@ nav {
   border-bottom: 1px solid #606060;
 }
 
+.right-frame {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 1vw;
+  height: 90vh;
+  background: -webkit-gradient(linear, left bottom, left top, from(#2b2b2b), to(#424242));
+  background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
+}
+
 /* ***********************************    main    ************************************ */
 main {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
   grid-area: main;
   background: #606060;
   z-index: 99;
@@ -470,16 +530,15 @@ main {
 
 /* *****************************************   footer   ************************************************ */
 footer {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: footer;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
   background-color: #2b2b2b;
 }
 
 .footercontent {
-  position: absolute;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -490,35 +549,56 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   width: 98%;
-  height: 60%;
-  margin: 10px 10px;
+  height: 70%;
+  padding: 5px 0;
+  margin: 15px 10px;
   background-color: #1d1d1d;
 }
 
 .swiper-buttons {
-  width: 122px;
   height: 80%;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 10px;
+  padding: 0 16px;
   border-right-width: 2px;
   border-right-style: groove;
-  border-color: rgba(100, 100, 100, 0.7);
+  border-color: #474747;
 }
 
 .swiper-buttons button {
   padding: 0;
+  margin: 0 3px;
   background-color: transparent;
   border: none;
-  margin: 0 3px;
   border-radius: 100px;
+}
+
+.prev-swiper-button {
+  width: 21px;
+  height: 21px;
+  background-image: url(../images/prev.png);
+  background-size: 100% 100%;
+}
+
+.play-button {
+  width: 28px;
+  height: 28px;
+  background-image: url(../images/play.png);
+  background-size: cover;
+}
+
+.next-swiper-button {
+  width: 21px;
+  height: 21px;
+  background-image: url(../images/next.png);
+  background-size: 100% 100%;
 }
 
 .volume-block {
@@ -533,13 +613,33 @@ footer {
           align-items: center;
   width: 112px;
   height: 80%;
+  padding: 0 10px;
   border-right-width: 2px;
   border-right-style: groove;
-  border-color: rgba(100, 100, 100, 0.7);
+  border-color: #474747;
 }
 
-.volume-block img {
-  margin: 0 3px;
+.volume-block button {
+  margin: 0 5px;
+  background-color: transparent;
+  border: none;
+}
+
+.volume-low {
+  width: 6px;
+  height: 9px;
+  padding: 0;
+  background-image: url(../images/vol0.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.volume-high {
+  width: 12px;
+  height: 10px;
+  background-image: url(../images/vol100.png);
+  background-size: 12px 10px;
+  background-repeat: no-repeat;
 }
 
 .volume-range {
@@ -581,18 +681,18 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 57.7%;
+  width: 100%;
   height: 80%;
   color: #dbdbdb;
   border-right-width: 2px;
   border-right-style: groove;
-  border-color: rgba(100, 100, 100, 0.7);
+  border-color: #474747;
 }
 
 .current-album-cover {
   position: absolute;
-  top: -132%;
-  left: 11px;
+  top: -55px;
+  left: 14px;
   border: 7px solid #1d1d1d;
   border-radius: 7px;
   z-index: 100;
@@ -707,12 +807,12 @@ footer {
 
 .side-track-time {
   position: absolute;
-  bottom: 10px;
+  bottom: 6px;
   right: 30px;
   width: auto;
   height: auto;
   padding: 0 12px;
-  background-color: #1d1d1d;
+  background-color: black;
 }
 
 .side-track-time p {
@@ -734,7 +834,7 @@ footer {
   padding: 0 5px;
   border-right-width: 2px;
   border-right-style: groove;
-  border-color: rgba(100, 100, 100, 0.7);
+  border-color: #474747;
 }
 
 .shuffle-repeat button {
@@ -752,7 +852,7 @@ footer {
 
 .adding-to-playlists ul {
   position: absolute;
-  top: -420%;
+  top: -175px;
   left: -80%;
   width: 148px;
   height: 160px;
@@ -765,7 +865,6 @@ footer {
 
 .adding-to-playlists li {
   padding: 6px 0;
-  border-bottom-width: 2px;
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
@@ -783,7 +882,6 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 8px;
   border-top: 0;
   border-left: 0;
   border-bottom: 0;
@@ -808,7 +906,7 @@ footer {
   border-right-width: 2px;
   border-left-width: 2px;
   border-style: groove;
-  border-color: rgba(100, 100, 100, 0.7);
+  border-color: #474747;
 }
 
 .now-playing p {
