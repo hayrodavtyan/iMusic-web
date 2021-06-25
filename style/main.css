@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap");
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -18,31 +17,19 @@ header, nav, main, footer {
 
 button {
   cursor: pointer;
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
+  transition: transform 0.3s;
 }
-
 button:hover {
-  -webkit-transition: -webkit-transform .1s;
-  transition: -webkit-transform .1s;
-  transition: transform .1s;
-  transition: transform .1s, -webkit-transform .1s;
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
+  transition: transform 0.1s;
+  transform: scale(1.1, 1.1);
 }
 
 header {
   position: fixed;
   top: 0;
   left: 16.5vw;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   width: 63%;
   height: auto;
   background-color: #424242;
@@ -50,16 +37,9 @@ header {
 }
 
 .header-navigation ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -69,7 +49,7 @@ header {
 .header-navigation li {
   padding: 3px 27px;
   color: #dbdbdb;
-  font: 300 .8rem "Open Sans";
+  font: 300 0.8rem "Open Sans";
   text-align: center;
   border-right-width: 2px;
   border-right-style: groove;
@@ -77,7 +57,6 @@ header {
   cursor: pointer;
   z-index: 100;
 }
-
 .header-navigation li.is_emphasized-header-item {
   padding: auto 36px;
   font: 400 1rem "Open sans", sans-serif;
@@ -87,21 +66,15 @@ header {
 }
 
 .authorisation-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   z-index: 100;
 }
 
 .authorisation-block > p, a {
   color: #dbdbdb;
-  font: .7rem "Open Sans";
+  font: 0.7rem "Open Sans";
   margin: 0;
   padding: 2px 10px;
   z-index: 100;
@@ -135,7 +108,6 @@ header {
   width: 50px;
   height: 40px;
 }
-
 .side-nav-toggler button {
   width: 100%;
   height: 100%;
@@ -143,7 +115,6 @@ header {
   border: none;
   background-color: transparent;
 }
-
 .side-nav-toggler .toggle-button__bar {
   width: 100%;
   height: 3px;
@@ -158,22 +129,12 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 16.5vw;
   height: 90vh;
-  background: -webkit-gradient(linear, left bottom, left top, from(#2b2b2b), to(#424242));
   background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
 }
 
@@ -182,34 +143,18 @@ nav {
 }
 
 .centered-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
 .nav-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-start;
+  align-items: center;
 }
-
 .nav-title p {
   margin: 0 0 0 17px;
   font: 300 1.7rem "Open Sans", sans-serif;
@@ -217,8 +162,7 @@ nav {
 }
 
 .side-nav-items {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   width: 90%;
   height: 44vh;
   list-style-image: url("../images/folder-grey.png");
@@ -227,11 +171,9 @@ nav {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 .side-nav-items::-webkit-scrollbar {
   display: none;
 }
-
 .side-nav-items li {
   list-style-position: inside;
   padding: 16px 25px;
@@ -241,11 +183,9 @@ nav {
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .side-nav-items li span {
   padding-left: 10px;
 }
-
 .side-nav-items :nth-child(2) {
   list-style: none;
   padding: 0;
@@ -256,11 +196,10 @@ nav {
   margin: 0;
   list-style-type: none;
 }
-
 .side-pseudo-nav li {
   margin-left: 25px;
   padding: 10px 0;
-  font-size: .8rem;
+  font-size: 0.8rem;
   border: none;
 }
 
@@ -279,19 +218,16 @@ nav {
   padding: 0;
   background: #1d1d1d;
 }
-
 .nav-bottom-info p {
   margin: 5px 0;
   text-align: center;
-  font-size: .6rem;
+  font-size: 0.6rem;
   color: #dbdbdb;
 }
-
 .nav-bottom-info :nth-child(3) {
   margin: 10px 0;
   text-transform: capitalize;
 }
-
 .nav-bottom-info div {
   width: 90%;
   margin: 0 auto;
@@ -305,7 +241,6 @@ nav {
   right: 0;
   width: 1vw;
   height: 90vh;
-  background: -webkit-gradient(linear, left bottom, left top, from(#2b2b2b), to(#424242));
   background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
 }
 
@@ -331,7 +266,6 @@ main {
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .playlist-title h1 {
   margin: 0;
   font-size: 1.7rem;
@@ -341,31 +275,22 @@ main {
 
 .album-info {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 13px 10px;
   margin: 0;
   border-bottom-width: 2px;
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .album-info > img {
   margin-right: 15px;
 }
 
 .more-group-images {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
   grid-column-gap: 11px;
   grid-row-gap: 5px;
   margin-right: 25px;
@@ -383,7 +308,6 @@ main {
   overflow: hidden;
   text-overflow: clip;
 }
-
 .group-biography button {
   position: absolute;
   bottom: 0;
@@ -399,7 +323,6 @@ main {
     height: 150px;
   }
 }
-
 .recommendations-and-playlist {
   position: relative;
   height: 320px;
@@ -407,7 +330,6 @@ main {
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .recommendations-and-playlist p {
   position: absolute;
   margin: 13px 13px 7px 13px;
@@ -418,16 +340,11 @@ main {
   position: absolute;
   top: 40px;
   left: 5px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
   width: 58%;
 }
-
 .recommendations img {
   margin: 10px 7px;
   padding: 0;
@@ -440,13 +357,11 @@ main {
     height: 100px;
   }
 }
-
 @media only screen and (max-width: 1051px) {
   .recommendations-and-playlist {
     height: 400px;
   }
 }
-
 .playlist {
   position: absolute;
   top: 0;
@@ -456,35 +371,30 @@ main {
   font-size: 1.3rem;
   color: #dbdbdb;
 }
-
 .playlist ol {
   padding: 0;
   margin: 5px 0 0 0;
   list-style-position: inside;
 }
-
 .playlist ol li {
   position: relative;
   padding: 0;
   height: 27px;
 }
-
 .playlist ol li a {
   vertical-align: middle;
   margin: 0 7px 9px 7px;
 }
-
 .playlist ol li p {
   position: absolute;
   right: 37px;
   display: inline-block;
   width: 35px;
   margin: 8px 0 0 0;
-  font-size: .75rem;
+  font-size: 0.75rem;
   vertical-align: middle;
   text-align: center;
 }
-
 .playlist ol li button {
   position: absolute;
   right: 0;
@@ -492,12 +402,10 @@ main {
   background-color: transparent;
   border: none;
 }
-
 .playlist ol li::marker {
   color: #dbdbdb;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
-
 .playlist ol li:hover {
   background-color: #008bdc;
 }
@@ -512,17 +420,12 @@ main {
   margin: 7px 0;
   position: absolute;
   right: 35px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   padding: 0;
   list-style-type: none;
   font-weight: 300;
 }
-
 .playlist-pages li a {
   padding: 0 1.8px;
   text-decoration: none;
@@ -535,15 +438,14 @@ main {
 
 @media only screen and (max-width: 1326px) {
   .album-info {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
+
   .more-group-images {
     margin-right: 0;
   }
+
   .group-biography {
     width: 76%;
     height: auto;
@@ -553,13 +455,13 @@ main {
   .group-biography button {
     position: static;
   }
+
   .recommendations img {
     width: 90px;
     height: 90px;
     border-width: 6px;
   }
 }
-
 /* *****************************************   footer   ************************************************ */
 footer {
   position: fixed;
@@ -571,15 +473,9 @@ footer {
 }
 
 .footercontent {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-start;
+  align-items: center;
   width: 98%;
   height: 70%;
   padding: 5px 0;
@@ -589,15 +485,9 @@ footer {
 
 .swiper-buttons {
   height: 80%;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 16px;
   border-right-width: 2px;
   border-right-style: groove;
@@ -634,15 +524,9 @@ footer {
 }
 
 .volume-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 112px;
   height: 80%;
   padding: 0 10px;
@@ -650,7 +534,6 @@ footer {
   border-right-style: groove;
   border-color: #474747;
 }
-
 .volume-block button {
   margin: 0 5px;
   background-color: transparent;
@@ -692,8 +575,7 @@ footer {
 .volume-slider {
   position: absolute;
   left: 70%;
-  -webkit-transform: translate(-4px, -2px);
-          transform: translate(-4px, -2px);
+  transform: translate(-4px, -2px);
   width: 8px;
   height: 8px;
   border-radius: 100%;
@@ -703,16 +585,9 @@ footer {
 
 .name-and-controller {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: flex-start;
+  flex-direction: column;
   width: 100%;
   height: 80%;
   color: #dbdbdb;
@@ -732,12 +607,8 @@ footer {
 
 .song-name-block {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -745,7 +616,7 @@ footer {
   width: auto;
   margin: 0 0 0 18px;
   font: 600 10px "Open Sans", sans-serif;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 }
 
 .song-name {
@@ -753,7 +624,7 @@ footer {
   width: 150px;
   margin: 0;
   font: 300 10px "Open Sans", sans-serif;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -761,7 +632,7 @@ footer {
 
 .song-duration {
   margin: 0 5px;
-  font: 10px "Open sans",sans-serif;
+  font: 10px "Open sans", sans-serif;
 }
 
 .song-name-block button {
@@ -774,15 +645,9 @@ footer {
 }
 
 .controller-full-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
@@ -810,8 +675,7 @@ footer {
 .controller-slider {
   position: absolute;
   left: 74.7%;
-  -webkit-transform: translate(-4px, -2px);
-          transform: translate(-4px, -2px);
+  transform: translate(-4px, -2px);
   width: 8px;
   height: 8px;
   border-radius: 100%;
@@ -824,20 +688,14 @@ footer {
   position: absolute;
   top: -36px;
   left: 74.7%;
-  -webkit-transform: translateX(-29px);
-          transform: translateX(-29px);
-  display: -webkit-box;
-  display: -ms-flexbox;
+  transform: translateX(-29px);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 60px;
   height: 43px;
   background-image: url("../images/track-time-bg.png");
   z-index: 99;
 }
-
 .track-time p {
   margin: 10px auto;
   font-size: 11px;
@@ -852,29 +710,21 @@ footer {
   padding: 0 12px;
   background-color: black;
 }
-
 .side-track-time p {
   margin: 0;
   font-size: 8px;
 }
 
 .shuffle-repeat {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   height: 80%;
   padding: 0 12px;
   border-right-width: 2px;
   border-right-style: groove;
   border-color: #474747;
 }
-
 .shuffle-repeat button {
   border: none;
   background-color: transparent;
@@ -887,7 +737,6 @@ footer {
   height: 80%;
   padding: 0 30px;
 }
-
 .adding-to-playlists ul {
   position: absolute;
   top: -180px;
@@ -900,13 +749,11 @@ footer {
   z-index: 101;
   background-color: #2b2b2b;
 }
-
 .adding-to-playlists li {
   padding: 6px 0;
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-
 .adding-to-playlists button {
   font-size: 16px;
   background-color: transparent;
@@ -927,17 +774,10 @@ footer {
 }
 
 .now-playing {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   height: 80%;
   padding: 0 20px;
   background-color: transparent;
@@ -948,7 +788,6 @@ footer {
   border-style: groove;
   border-color: #474747;
 }
-
 .now-playing p {
   width: 115px;
   margin: 0 20px 0 0;
@@ -959,40 +798,34 @@ footer {
 /* ******************************************   media queries   ************************************** */
 @media only screen and (max-width: 1177px) {
   .nav-title {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     top: 145px;
     left: 20%;
   }
   .nav-title p {
     margin: 0;
   }
+
   .main-section {
     width: 90%;
   }
+
   .group-biography {
     padding-left: 20px;
     width: 30%;
   }
+
   .recommendations-and-playlist {
     position: static;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
     height: 460px;
   }
   .recommendations-and-playlist p {
     position: static;
   }
+
   .recommendations {
     position: static;
     width: 95%;
@@ -1004,41 +837,42 @@ footer {
     height: 70px;
     border-width: 6px;
   }
+
   .playlist {
     position: static;
     width: 95%;
     padding-left: 20px;
     margin: 0 auto;
   }
+
   .playlist-pages {
     right: 100px;
   }
 }
-
 @media only screen and (max-width: 1366px) {
   .now-playing p {
     display: none;
   }
 }
-
 @media only screen and (max-width: 1280px) {
   nav {
     height: 88vh;
   }
+
   .nav-bottom-info {
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
+    transform: translateY(-30px);
   }
+
   footer {
     height: 16vh;
   }
+
   .footercontent {
     position: relative;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    align-items: flex-start;
     height: 80%;
   }
+
   .name-and-controller {
     position: absolute;
     top: 45px;
@@ -1050,27 +884,34 @@ footer {
     border-top-style: groove;
     border-color: #474747;
   }
+
   .current-album-cover {
     display: none;
   }
+
   .side-track-time {
     top: 50%;
     right: 30px;
   }
+
   .swiper-buttons {
     height: 40%;
   }
+
   .volume-block {
     width: 110px;
     height: 40%;
     padding: 0 5px;
   }
+
   .shuffle-repeat {
     height: 40%;
   }
+
   .is_add-to-playlist {
     display: none;
   }
+
   .adding-to-playlists {
     width: 60%;
     height: 40%;
@@ -1078,15 +919,9 @@ footer {
   }
   .adding-to-playlists ul {
     position: static;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-between;
+    align-items: center;
     padding: 0;
     width: auto;
     height: 100%;
@@ -1094,6 +929,7 @@ footer {
   .adding-to-playlists li {
     border-bottom: none;
   }
+
   .now-playing {
     height: 40%;
     padding: 0 12px;
@@ -1105,31 +941,37 @@ footer {
     font-size: 17px;
   }
 }
-
 @media only screen and (max-width: 1024px) {
   .header-navigation li {
     padding: 8px 27px;
   }
+
   .authorisation-block p {
     display: none;
   }
+
   .account-icon {
     display: inline-block;
   }
+
   .empty-box {
     visibility: hidden;
   }
+
   nav {
     display: none;
   }
+
   .side-nav-toggler {
     display: block;
     margin: 0 5px;
   }
+
   .side-track-time {
     top: 50%;
     right: 20px;
   }
+
   .now-playing {
     padding: 0 18px;
   }
@@ -1137,17 +979,23 @@ footer {
     display: none;
   }
 }
-
 @media only screen and (max-width: 840px) {
+  header {
+    left: 0;
+  }
+
   .swiper-buttons {
     width: 250px;
   }
+
   .volume-block {
     width: 250px;
   }
+
   .volume-range {
     width: 150px;
   }
+
   .adding-to-playlists {
     position: relative;
     display: inline-block;
@@ -1177,6 +1025,7 @@ footer {
   .adding-to-playlists .is_add-to-playlist {
     display: block;
   }
+
   .now-playing {
     padding: 0 20px;
   }
@@ -1184,4 +1033,5 @@ footer {
     display: inline-block;
   }
 }
+
 /*# sourceMappingURL=main.css.map */
