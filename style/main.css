@@ -982,6 +982,7 @@ footer {
 @media only screen and (max-width: 840px) {
   header {
     left: 0;
+    width: 100%;
   }
 
   .swiper-buttons {
