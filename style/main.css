@@ -79,7 +79,7 @@ header {
 }
 
 .header-navigation li.is_emphasized-header-item {
-  padding: 1px 36px;
+  padding: auto 36px;
   font: 400 1rem "Open sans", sans-serif;
   border-bottom: 3px solid #008bdc;
   background-color: #2b2b2b;
@@ -103,7 +103,7 @@ header {
   color: #dbdbdb;
   font: .7rem "Open Sans";
   margin: 0;
-  padding: 2px 5px;
+  padding: 2px 10px;
   z-index: 100;
 }
 
@@ -112,13 +112,45 @@ header {
   font-weight: 600;
 }
 
+.account-icon {
+  display: none;
+  width: 17px;
+  height: 17px;
+  background-image: url(../images/account.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .empty-box {
   position: fixed;
   top: 0;
   left: 16.5vw;
   background-color: #424242;
   width: 100%;
-  height: 27px;
+  height: 30px;
+}
+
+.side-nav-toggler {
+  display: none;
+  width: 50px;
+  height: 40px;
+}
+
+.side-nav-toggler button {
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  border: none;
+  background-color: transparent;
+}
+
+.side-nav-toggler .toggle-button__bar {
+  width: 100%;
+  height: 3px;
+  background: #1d1d1d;
+  display: block;
+  margin: 9px 0;
+  border-radius: 10px;
 }
 
 /* ********************************    nav   ********************************* */
@@ -691,7 +723,7 @@ footer {
 
 .current-album-cover {
   position: absolute;
-  top: -55px;
+  top: -58px;
   left: 14px;
   border: 7px solid #1d1d1d;
   border-radius: 7px;
@@ -741,13 +773,21 @@ footer {
   padding: 0;
 }
 
-.song-name-linker {
-  width: 17px;
-  height: auto;
+.controller-full-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
 .controller-block {
-  width: 100%;
+  width: 89%;
   position: relative;
   margin: 15px 16px 0 16px;
   border-bottom: 1px solid #191919;
@@ -757,7 +797,7 @@ footer {
 .controller-range {
   border: 4px solid black;
   background-color: #dbdbdb;
-  width: 89%;
+  width: 100%;
   height: 11px;
 }
 
@@ -769,7 +809,7 @@ footer {
 
 .controller-slider {
   position: absolute;
-  left: 66.5%;
+  left: 74.7%;
   -webkit-transform: translate(-4px, -2px);
           transform: translate(-4px, -2px);
   width: 8px;
@@ -783,7 +823,7 @@ footer {
 .track-time {
   position: absolute;
   top: -36px;
-  left: 66.5%;
+  left: 74.7%;
   -webkit-transform: translateX(-29px);
           transform: translateX(-29px);
   display: -webkit-box;
@@ -806,32 +846,30 @@ footer {
 }
 
 .side-track-time {
-  position: absolute;
-  bottom: 6px;
-  right: 30px;
   width: auto;
   height: auto;
+  margin-right: 10px;
   padding: 0 12px;
   background-color: black;
 }
 
 .side-track-time p {
   margin: 0;
-  font-size: 9px;
+  font-size: 8px;
 }
 
 .shuffle-repeat {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 6.2%;
   height: 80%;
-  padding: 0 5px;
+  padding: 0 12px;
   border-right-width: 2px;
   border-right-style: groove;
   border-color: #474747;
@@ -840,19 +878,19 @@ footer {
 .shuffle-repeat button {
   border: none;
   background-color: transparent;
-  padding: 0;
+  padding: 0 3px;
 }
 
 .adding-to-playlists {
   position: relative;
   display: inline-block;
-  width: 4%;
   height: 80%;
+  padding: 0 30px;
 }
 
 .adding-to-playlists ul {
   position: absolute;
-  top: -175px;
+  top: -180px;
   left: -80%;
   width: 148px;
   height: 160px;
@@ -898,18 +936,21 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 16.3%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   height: 80%;
+  padding: 0 20px;
   background-color: transparent;
   border-top: 0;
   border-bottom: 0;
-  border-right-width: 2px;
+  border-right: 0;
   border-left-width: 2px;
   border-style: groove;
   border-color: #474747;
 }
 
 .now-playing p {
+  width: 115px;
   margin: 0 20px 0 0;
   font: 300 20px "open sans", sans-serif;
   color: grey;
@@ -972,11 +1013,172 @@ footer {
   .playlist-pages {
     right: 100px;
   }
+}
+
+@media only screen and (max-width: 1366px) {
+  .now-playing p {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  nav {
+    height: 88vh;
+  }
+  .nav-bottom-info {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  footer {
+    height: 16vh;
+  }
+  .footercontent {
+    position: relative;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 80%;
+  }
+  .name-and-controller {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    height: 45%;
+    padding-top: 7px;
+    border-right: none;
+    border-top-width: 2px;
+    border-top-style: groove;
+    border-color: #474747;
+  }
+  .current-album-cover {
+    display: none;
+  }
+  .side-track-time {
+    top: 50%;
+    right: 30px;
+  }
+  .swiper-buttons {
+    height: 40%;
+  }
+  .volume-block {
+    width: 110px;
+    height: 40%;
+    padding: 0 5px;
+  }
   .shuffle-repeat {
+    height: 40%;
+  }
+  .is_add-to-playlist {
+    display: none;
+  }
+  .adding-to-playlists {
+    width: 60%;
+    height: 40%;
     padding: 0;
   }
+  .adding-to-playlists ul {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+    width: auto;
+    height: 100%;
+  }
+  .adding-to-playlists li {
+    border-bottom: none;
+  }
+  .now-playing {
+    height: 40%;
+    padding: 0 12px;
+    border: none;
+  }
   .now-playing p {
-    font-size: 15px;
+    display: inline-block;
+    width: 91px;
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .header-navigation li {
+    padding: 8px 27px;
+  }
+  .authorisation-block p {
+    display: none;
+  }
+  .account-icon {
+    display: inline-block;
+  }
+  .empty-box {
+    visibility: hidden;
+  }
+  nav {
+    display: none;
+  }
+  .side-nav-toggler {
+    display: block;
+    margin: 0 5px;
+  }
+  .side-track-time {
+    top: 50%;
+    right: 20px;
+  }
+  .now-playing {
+    padding: 0 18px;
+  }
+  .now-playing p {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .adding-to-playlists {
+    position: relative;
+    display: inline-block;
+    height: 80%;
+    padding: 0 30px;
+  }
+  .adding-to-playlists ul {
+    position: absolute;
+    top: -180px;
+    left: -80%;
+    display: block;
+    width: 148px;
+    height: 160px;
+    padding: 7px 10px;
+    margin: 0;
+    list-style-type: none;
+    z-index: 101;
+    background-color: #2b2b2b;
+  }
+  .adding-to-playlists li {
+    padding: 6px 0;
+    border-bottom-style: groove;
+    border-color: rgba(100, 100, 100, 0.7);
+  }
+  .adding-to-playlists button {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: #dbdbdb;
+  }
+  .is_add-to-playlist {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    background-color: transparent;
   }
 }
 /*# sourceMappingURL=main.css.map */
