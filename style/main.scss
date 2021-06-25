@@ -1166,17 +1166,31 @@ footer {
 
 @media only screen and (max-width: 840px) {
 
+  .swiper-buttons {
+    width: 250px;
+  }
+
+  .volume-block {
+    width: 250px;
+  }
+
+  .volume-range {
+    width: 150px;
+  }
+
   .adding-to-playlists {
     position: relative;
     display: inline-block;
-    // width: 4%;
-    height: 80%;
-    padding: 0 30px;
+    height: 40%;
+    padding: 0 5px;
+    // outline: 1px dashed gold;
+    border-right-style: groove;
+    border-color: rgba(100,100,100,0.7);
   
     ul {
       position: absolute;
       top: -180px;
-      left: -80%;
+      left: 10;
       display: block;
       width: 148px;
       height: 160px;
@@ -1192,26 +1206,17 @@ footer {
       border-bottom-style: groove;
       border-color: rgba(100,100,100,0.7);
     }
-  
-    button {
-      font-size: 16px;
-      background-color: transparent;
-      border: none;
-      color: $white;
+
+    .is_add-to-playlist {
+      display: block;
     }
   }
-  
-  
-  .is_add-to-playlist {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    // padding: 8px;
-    border-top: 0;
-    border-left: 0;
-    border-bottom: 0;
-    background-color: transparent;
+
+
+  .now-playing {
+    padding: 0 20px;
+    p {
+      display: inline-block;
+    }
   }
 }
