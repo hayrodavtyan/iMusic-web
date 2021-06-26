@@ -142,6 +142,7 @@ nav {
   width: 16.5vw;
   height: 90vh;
   background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
+  z-index: 170;
 }
 
 .main-logo {
@@ -250,13 +251,13 @@ nav {
 
 /* ***********************************    main    ************************************ */
 main {
-  grid-area: main;
+  padding: 30px 30px 200px 16.5vw;
   background: #606060;
   z-index: 99;
 }
 
 .main-section {
-  width: 74%;
+  width: 76%;
   margin: 18px;
   background: #424242;
 }
@@ -362,8 +363,12 @@ main {
   }
 }
 @media only screen and (max-width: 1051px) {
+  .group-biography {
+    width: 90%;
+  }
+
   .recommendations-and-playlist {
-    height: 400px;
+    height: 500px;
   }
 }
 .playlist {
@@ -450,7 +455,6 @@ main {
   }
 
   .group-biography {
-    width: 76%;
     height: auto;
     margin: 20px 0 0 0;
     text-align: justify;
@@ -816,7 +820,7 @@ footer {
     display: none;
   }
 }
-@media only screen and (max-width: 1177px) {
+@media only screen and (max-width: 1326px) {
   .nav-title {
     flex-direction: column;
     top: 145px;
@@ -832,7 +836,6 @@ footer {
 
   .group-biography {
     padding-left: 20px;
-    width: 30%;
   }
 
   .recommendations-and-playlist {
@@ -850,7 +853,6 @@ footer {
     position: static;
     width: 95%;
     margin: 0 auto;
-    outline: 1px dashed cyan;
   }
   .recommendations img {
     width: 70px;

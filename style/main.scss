@@ -166,6 +166,7 @@ nav {
   width: 16.5vw;
   height: 90vh;
   background: linear-gradient(0deg, rgba(43,43,43,1) 0%, rgba(66,66,66,1) 100%);
+  z-index: 170;
 }
 
 .main-logo {
@@ -301,13 +302,13 @@ nav {
 
 
 main {
-  grid-area: main;
+  padding: 30px 30px 200px 16.5vw;
   background: $lightgrey;
   z-index: 99;
 }
 
 .main-section {
-  width: 74%;
+  width: 76%;
   margin: 18px;
   background: $grey;
 }
@@ -434,8 +435,12 @@ main {
 
 
 @media only screen and (max-width: 1051px) {
+
+  .group-biography {
+    width: 90%;
+  }
   .recommendations-and-playlist {
-    height: 400px;
+    height: 500px;
   }
 }
 
@@ -539,7 +544,7 @@ main {
   }
 
   .group-biography {
-    width: 76%;
+    //width: 76%;
     height: auto;
     margin: 20px 0 0 0;
     text-align: justify;
@@ -547,7 +552,7 @@ main {
     button {
       position: static;
     }
-  } 
+  }
 
   .recommendations {
     img {
@@ -961,7 +966,7 @@ footer {
 
 
 
-@media only screen and (max-width: 1177px) {
+@media only screen and (max-width: 1326px) {
 
   .nav-title {
     flex-direction: column;
@@ -979,7 +984,7 @@ footer {
 
   .group-biography {
     padding-left: 20px;
-    width: 30%;
+    //width: 30%;
   }
 
   .recommendations-and-playlist {
@@ -998,7 +1003,7 @@ footer {
     position: static;
     width: 95%;
     margin: 0 auto;
-    outline: 1px dashed cyan;
+    //outline: 1px dashed cyan;
 
     img {
       width: 70px;
