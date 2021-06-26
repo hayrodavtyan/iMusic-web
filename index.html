@@ -12,6 +12,15 @@
   <body>
 
     <header>
+
+      <div class="side-nav-toggle">
+        <button>
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+        </button>
+      </div>
+
       <div class="header-navigation">
         <ul>
           <li>music</li>
@@ -24,22 +33,15 @@
       <div class="authorisation-block">
         <a href="javascript:void(0);" class="account-icon"></a>
         <p>Hi, George!</p>
-        <a href="javascript:void(0);"><u> Logout </u></a>
+        <a href="javascript:void(0);" class="logout-button"><u> Logout </u></a>
       </div>
 
       <div class="empty-box"></div>
 
     </header>
 
-  
 
-    <div class="side-nav-toggler"> 
-      <button>
-        <span class="toggle-button__bar"></span>
-        <span class="toggle-button__bar"></span>
-        <span class="toggle-button__bar"></span>
-      </button> 
-    </div>
+
 
     <nav>
       <a href="javascript:void(0);" class="main-logo"> <img src="images/logo.png" alt="iMusic Logo" width="87" height="70"> </a>
@@ -52,7 +54,7 @@
         </div>
 
         <ul class="side-nav-items">
-          <li id="is_emphasized-side-item"> <span> playlists </span> </li>
+          <li class="is_emphasized-side-item"> <span> playlists </span> </li>
           <li>
             <ul class="side-pseudo-nav">
               <li>my playlist 1</li>
@@ -134,7 +136,7 @@
             <ul class="playlist-pages">
               <li><a href="javascript:void(0);"> << </a></li>
               <li><a href="javascript:void(0);"> 1 </a></li>
-              <li><a href="javascript:void(0);" id="pages-emphasized"> 2 </a></li>
+              <li><a href="javascript:void(0);" class="pages-emphasized"> 2 </a></li>
               <li><a href="javascript:void(0);"> 3 </a></li>
               <li><a href="javascript:void(0);"> 4 </a></li>
               <li><a href="javascript:void(0);"> 5 </a></li>
@@ -154,7 +156,7 @@
 
     <footer>
 
-      <div class="footercontent">
+      <div class="footer-content">
 
         <div class="swiper-buttons">
           <button type="button" class="prev-swiper-button is_active">  </button>
@@ -201,8 +203,8 @@
 
 
         <div class="shuffle-repeat">
-          <button type="button"> <img src="images/shuffle.png" alt="shuffle" width="26" height="26"> </button>
-          <button type="button"> <img src="images/repeat.png" alt="repeat" width="26" height="26"> </button>
+          <button type="button"> </button>
+          <button type="button"> </button>
         </div>
 
 
@@ -213,7 +215,7 @@
             <li><button type="button"> add to favorites </button></li>
             <li><button type="button"> add to queue </button></li>
           </ul>
-          <button type="button" class="is_add-to-playlist"> <img src="images/plus-blue.png" alt="add to playlist"> </button>
+          <button type="button" class="is_add-to-playlist"> </button>
         </div>
 
         <button type="button" class="now-playing">
@@ -222,8 +224,9 @@
         </button>
 
       </div>
-    </footer> 
+    </footer>
 
+  <script src="script.js"></script>
   </body>
 
 </html>
