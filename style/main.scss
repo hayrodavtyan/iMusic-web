@@ -399,7 +399,7 @@ main {
   border-bottom-style: groove;
   border-color: rgba(100,100,100,0.7);
 
-  p {
+  .discography {
     position: absolute;
     margin: 13px 13px 7px 13px;
     color: $white;
@@ -461,24 +461,26 @@ main {
 
     li {
       position: relative;
-      padding: 0;
+      //display: flex;
+      //justify-content: flex-start;
+      //align-items: center;
+      padding-left: 10px;
       height: 27px;
     }
 
     li a {
+      position: absolute;
+      bottom: 0;
       vertical-align: middle;
-      margin: 0 7px 9px 7px;
     }
 
     li p {
       position: absolute;
       right: 37px;
+      top: -5px;
       display: inline-block;
       width: 35px;
-      //padding: 0 7px;
-      margin: 8px 0 0 0;
       font-size: .75rem;
-      vertical-align: middle;
       text-align: center;
     }
 
@@ -532,36 +534,6 @@ main {
 
 
 
-@media only screen and (max-width: 1326px) {
-
-  .album-info {
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-
-  .more-group-images {
-    margin-right: 0;
-  }
-
-  .group-biography {
-    //width: 76%;
-    height: auto;
-    margin: 20px 0 0 0;
-    text-align: justify;
-
-    button {
-      position: static;
-    }
-  }
-
-  .recommendations {
-    img {
-      width: 90px;
-      height: 90px;
-      border-width: 6px;
-    }
-  }
-}
 
 
 /* *****************************************   footer   ************************************************ */
@@ -968,6 +940,34 @@ footer {
 
 @media only screen and (max-width: 1326px) {
 
+  .album-info {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .more-group-images {
+    margin-right: 0;
+  }
+
+  .group-biography {
+    //width: 76%;
+    height: auto;
+    margin: 20px 0 0 0;
+    text-align: justify;
+
+    button {
+      position: static;
+    }
+  }
+
+  .recommendations {
+    img {
+      width: 90px;
+      height: 90px;
+      border-width: 6px;
+    }
+  }
+
   .nav-title {
     flex-direction: column;
     top: 145px;
@@ -994,7 +994,7 @@ footer {
     align-items: flex-start;
     height: 460px;
 
-    p {
+    .discography {
       position: static;
     }
   }

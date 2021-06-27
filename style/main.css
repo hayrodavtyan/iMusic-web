@@ -335,7 +335,7 @@ main {
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
-.recommendations-and-playlist p {
+.recommendations-and-playlist .discography {
   position: absolute;
   margin: 13px 13px 7px 13px;
   color: #dbdbdb;
@@ -387,21 +387,21 @@ main {
 }
 .playlist ol li {
   position: relative;
-  padding: 0;
+  padding-left: 10px;
   height: 27px;
 }
 .playlist ol li a {
+  position: absolute;
+  bottom: 0;
   vertical-align: middle;
-  margin: 0 7px 9px 7px;
 }
 .playlist ol li p {
   position: absolute;
   right: 37px;
+  top: -5px;
   display: inline-block;
   width: 35px;
-  margin: 8px 0 0 0;
   font-size: 0.75rem;
-  vertical-align: middle;
   text-align: center;
 }
 .playlist ol li button {
@@ -444,31 +444,6 @@ main {
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 1326px) {
-  .album-info {
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-
-  .more-group-images {
-    margin-right: 0;
-  }
-
-  .group-biography {
-    height: auto;
-    margin: 20px 0 0 0;
-    text-align: justify;
-  }
-  .group-biography button {
-    position: static;
-  }
-
-  .recommendations img {
-    width: 90px;
-    height: 90px;
-    border-width: 6px;
-  }
-}
 /* *****************************************   footer   ************************************************ */
 footer {
   position: fixed;
@@ -821,6 +796,30 @@ footer {
   }
 }
 @media only screen and (max-width: 1326px) {
+  .album-info {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .more-group-images {
+    margin-right: 0;
+  }
+
+  .group-biography {
+    height: auto;
+    margin: 20px 0 0 0;
+    text-align: justify;
+  }
+  .group-biography button {
+    position: static;
+  }
+
+  .recommendations img {
+    width: 90px;
+    height: 90px;
+    border-width: 6px;
+  }
+
   .nav-title {
     flex-direction: column;
     top: 145px;
@@ -845,7 +844,7 @@ footer {
     align-items: flex-start;
     height: 460px;
   }
-  .recommendations-and-playlist p {
+  .recommendations-and-playlist .discography {
     position: static;
   }
 
