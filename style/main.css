@@ -79,6 +79,7 @@ header {
   justify-content: space-between;
   width: 100%;
   background-color: #424242;
+  z-index: 1;
 }
 
 .side-nav-toggle {
@@ -111,7 +112,6 @@ header {
   list-style: none;
   margin: 0 0 0 16.5vw;
   padding: 0;
-  z-index: 100;
 }
 .header-navigation a {
   padding: 3px 27px;
@@ -123,21 +123,19 @@ header {
   border-right-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
   cursor: pointer;
-  z-index: 100;
 }
 .header-navigation a.is_emphasized-header-item {
   padding: 3px 36px;
   font: 400 1rem "Open sans", sans-serif;
   border-bottom: 3px solid #008bdc;
   background-color: #2b2b2b;
-  z-index: 100;
 }
 
 .authorisation-block {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  z-index: 100;
+  margin-right: 21%;
 }
 
 .authorisation-block p, a {
@@ -145,7 +143,6 @@ header {
   font: 0.7rem "Open Sans";
   margin: 0 auto;
   padding: 2px 10px;
-  z-index: 100;
 }
 
 .authorisation-block p {
@@ -156,19 +153,6 @@ header {
 .account-icon span {
   display: none;
   font-size: 17px;
-}
-
-.logout-button {
-  margin-right: 15px;
-}
-
-.empty-box {
-  position: fixed;
-  top: 0;
-  left: 16.5vw;
-  background-color: #424242;
-  width: 100%;
-  height: 30px;
 }
 
 /* ********************************    side-nav   ********************************* */
@@ -183,6 +167,7 @@ header {
   align-items: center;
   width: 16.5vw;
   background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
+  z-index: 1;
 }
 
 .side-nav.open {
@@ -322,7 +307,6 @@ header {
 main {
   padding: 50px 30px 100px 18vw;
   background: #606060;
-  z-index: 99;
 }
 
 .main-section {
@@ -381,6 +365,7 @@ main {
   white-space: normal;
   overflow: hidden;
   text-overflow: clip;
+  z-index: 0;
 }
 .group-biography button {
   position: absolute;
@@ -392,54 +377,6 @@ main {
   color: #008bdc;
 }
 
-@media only screen and (max-width: 1406px) {
-  .group-biography {
-    height: 150px;
-  }
-}
-.recommendations-and-playlist {
-  position: relative;
-  height: 320px;
-  border-bottom-width: 2px;
-  border-bottom-style: groove;
-  border-color: rgba(100, 100, 100, 0.7);
-}
-.recommendations-and-playlist .discography {
-  position: absolute;
-  margin: 13px 13px 7px 13px;
-  color: #dbdbdb;
-}
-
-.recommendations {
-  position: absolute;
-  top: 40px;
-  left: 5px;
-  display: inline-flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 58%;
-}
-.recommendations img {
-  margin: 10px 7px;
-  padding: 0;
-  border: 15px solid #2b2b2b;
-}
-
-@media only screen and (max-width: 1497px) {
-  .recommendations img {
-    width: 100px;
-    height: 100px;
-  }
-}
-@media only screen and (max-width: 1051px) {
-  .group-biography {
-    width: 90%;
-  }
-
-  .recommendations-and-playlist {
-    height: 500px;
-  }
-}
 .playlist {
   position: absolute;
   top: 0;
@@ -657,7 +594,7 @@ main {
   left: 14px;
   border: 7px solid #1d1d1d;
   border-radius: 7px;
-  z-index: 175;
+  z-index: 2;
 }
 
 .song-name-block {
@@ -736,7 +673,6 @@ main {
   border-radius: 100%;
   border: 3px solid #93cdec;
   background-color: #008bdd;
-  z-index: 100;
 }
 
 .track-time {
@@ -749,7 +685,6 @@ main {
   width: 60px;
   height: 43px;
   background-image: url("../images/track-time-bg.png");
-  z-index: 99;
 }
 .track-time p {
   margin: 10px auto;
@@ -868,12 +803,55 @@ main {
 }
 
 /* ******************************************   media queries   ************************************** */
+@media only screen and (max-width: 1497px) {
+  .recommendations img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media only screen and (max-width: 1406px) {
+  .group-biography {
+    height: 150px;
+  }
+}
+.recommendations-and-playlist {
+  position: relative;
+  height: 320px;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-color: rgba(100, 100, 100, 0.7);
+}
+.recommendations-and-playlist .discography {
+  position: absolute;
+  margin: 13px 13px 7px 13px;
+  color: #dbdbdb;
+}
+
+.recommendations {
+  position: absolute;
+  top: 40px;
+  left: 5px;
+  display: inline-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 58%;
+}
+.recommendations img {
+  margin: 10px 7px;
+  padding: 0;
+  border: 15px solid #2b2b2b;
+}
+
 @media only screen and (max-width: 1366px) {
   .now-playing p {
     display: none;
   }
 }
 @media only screen and (max-width: 1326px) {
+  .authorisation-block {
+    margin-right: 10%;
+  }
+
   .album-info {
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -966,6 +944,9 @@ main {
     padding: 8px 27px;
   }
 
+  .authorisation-block {
+    margin-right: 10px;
+  }
   .authorisation-block p {
     display: none;
   }
@@ -976,6 +957,7 @@ main {
 
   .side-nav {
     display: none;
+    top: 34px;
   }
 
   .nav-title {
@@ -983,6 +965,7 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: nowrap;
     margin: 0 0 3px 32px;
   }
   .nav-title p {
@@ -993,7 +976,7 @@ main {
 
   main {
     padding: 0 30px;
-    margin: 80px auto 100px auto;
+    margin: 80px auto 120px auto;
   }
 
   .main-section {
@@ -1012,13 +995,22 @@ main {
     display: none;
   }
 }
+@media only screen and (max-width: 1051px) {
+  .group-biography {
+    width: 90%;
+  }
+
+  .recommendations-and-playlist {
+    height: 500px;
+  }
+}
 @media only screen and (max-width: 850px) {
   .header-navigation a:nth-child(4) {
     border: none;
   }
 
   .side-nav {
-    height: 88vh;
+    bottom: 93px;
   }
 
   .nav-bottom-info {
@@ -1120,7 +1112,27 @@ main {
     font-size: 17px;
   }
 }
+@media only screen and (max-width: 787px) {
+  .recommendations-and-playlist {
+    height: 550px;
+  }
+}
+@media only screen and (max-width: 607px) {
+  main {
+    padding: 0;
+  }
+
+  .album-info img, .more-group-images {
+    width: 90%;
+    height: auto;
+    margin: 0 auto 20px auto;
+  }
+}
 @media only screen and (max-width: 580px) {
+  .side-nav {
+    top: 33px;
+  }
+
   .track-time {
     display: none;
   }
@@ -1178,13 +1190,19 @@ main {
     right: 0;
   }
 }
+@media only screen and (max-width: 410px) {
+  .logout-button {
+    display: none;
+  }
+}
 @media only screen and (max-width: 385px) {
   .authorisation-block {
     margin-right: 10px;
   }
-
-  .logout-button {
-    display: none;
+}
+@media only screen and (max-width: 370px) {
+  .recommendations-and-playlist {
+    height: 650px;
   }
 }
 @media only screen and (max-width: 340px) {
