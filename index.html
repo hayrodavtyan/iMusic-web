@@ -21,29 +21,30 @@
         </button>
       </div>
 
-      <div class="header-navigation">
-        <ul>
-          <li>music</li>
-          <li class="is_emphasized-header-item">radio</li>
-          <li>library</li>
-          <li>charts</li>
-        </ul>
-      </div>
+      <nav class="header-navigation">
+        <nav>
+          <a href="javascript:void(0);">music</a>
+          <a href="javascript:void(0);" class="is_emphasized-header-item">radio</a>
+          <a href="javascript:void(0);">library</a>
+          <a href="javascript:void(0);">charts</a>
+        </nav>
+      </nav>
 
       <div class="authorisation-block">
-        <a href="javascript:void(0);" class="account-icon"></a>
-        <p>Hi, George!</p>
+        <a href="javascript:void(0);" class="account-icon">
+          <span class="icon-user"></span>
+          <p>Hi, George!</p>
+        </a>
+
         <a href="javascript:void(0);" class="logout-button"><u> Logout </u></a>
       </div>
-
-      <div class="empty-box"></div>
 
     </header>
 
 
 
 
-    <nav>
+    <section class="side-nav">
       <a href="javascript:void(0);" class="main-logo"> <img src="images/logo.png" alt="iMusic Logo" width="87" height="70"> </a>
 
       <div class="centered-content">
@@ -54,20 +55,23 @@
         </div>
 
         <ul class="side-nav-items">
-          <li class="is_emphasized-side-item"> <span> playlists </span> </li>
-          <li>
+          <li class="is_emphasized-side-item">
+            <span> playlists </span>
             <ul class="side-pseudo-nav">
               <li>my playlist 1</li>
               <li>my playlist 2</li>
               <li>my playlist 3</li>
             </ul>
           </li>
+
           <li><span> my mp3 </span></li>
           <li><span> tracks </span></li>
           <li><span> favorites </span></li>
           <li><span> genres </span></li>
           <li><span> collections </span></li>
           <li><span> TOP-100 </span></li>
+          <li><span> clips </span></li>
+          <li><span> newest </span></li>
         </ul>
 
       </div>
@@ -78,12 +82,11 @@
         <p>La neblina del verano by new phunk theory</p>
       </div>
 
-    </nav>
+    </section>
 
     <div class="right-frame"></div>
 
 
-<!--
 
     <main>
 
@@ -152,30 +155,29 @@
 
     </main>
 
--->
 
-    <footer>
+    <section class="player">
 
-      <div class="footer-content">
+      <ul class="player-content">
 
-        <div class="swiper-buttons">
+        <li class="swiper-buttons">
           <button type="button" class="prev-swiper-button is_active">  </button>
           <button type="button" class="play-button is_active">  </button>
           <button type="button" class="next-swiper-button is_active">  </button>
-        </div>
+        </li>
 
-        <div class="volume-block">
-          <button type="button" class="volume-low"> </button>
+        <li class="volume-block">
+          <button type="button" class="volume-low">  </button>
 
           <div class="volume-range">
             <div class="volume-blue-part"> <div class="volume-slider"></div> </div>
           </div>
 
           <button type="button" class="volume-high"> </button>
-        </div>
+        </li>
 
 
-        <div class="name-and-controller">
+        <li class="name-and-controller">
 
           <img src="images/current-album-cover.png" alt="current album cover" class="current-album-cover" width="57" height="57">
 
@@ -199,16 +201,16 @@
             <div class="side-track-time"> <p>02:45</p> </div>  
           </div>
 
-        </div>
+        </li>
 
 
-        <div class="shuffle-repeat">
+        <li class="shuffle-repeat">
           <button type="button"> </button>
           <button type="button"> </button>
-        </div>
+        </li>
 
 
-        <div class="adding-to-playlists">
+        <li class="adding-to-playlists">
           <ul>
             <li><button type="button"> share </button></li>
             <li><button type="button"> add to playlist </button></li>
@@ -216,15 +218,17 @@
             <li><button type="button"> add to queue </button></li>
           </ul>
           <button type="button" class="is_add-to-playlist"> </button>
-        </div>
+        </li>
 
-        <button type="button" class="now-playing">
-          <p>now playing</p>
-          <img src="images/now-playing.png" alt="now playing">
-        </button>
+        <li class="now-playing">
+          <button type="button">
+            <p>now playing</p>
+            <a href="javascript:void(0);"></a>
+          </button>
+        </li>
 
-      </div>
-    </footer>
+      </ul>
+    </section>
 
   <script src="script.js"></script>
   </body>

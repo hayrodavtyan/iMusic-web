@@ -1,4 +1,51 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap");
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?ga21hf");
+  src: url("../fonts/icomoon.eot?ga21hf#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?ga21hf") format("truetype"), url("../fonts/icomoon.woff?ga21hf") format("woff"), url("../fonts/icomoon.svg?ga21hf#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "";
+}
+
+.icon-play2:before {
+  content: "";
+}
+
+.icon-backward:before {
+  content: "";
+}
+
+.icon-forward2:before {
+  content: "";
+}
+
+.icon-volume-high:before {
+  content: "";
+}
+
+.icon-volume-mute:before {
+  content: "";
+}
+
 * {
   box-sizing: border-box;
 }
@@ -11,7 +58,7 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-header, nav, main, footer {
+header, .side-nav, main, .player {
   margin: 0;
 }
 
@@ -21,17 +68,16 @@ button {
 }
 button:hover {
   transition: transform 0.1s;
-  transform: scale(1.1, 1.1);
+  transform: scale(1.2, 1.2);
 }
 
 header {
   position: fixed;
   top: 0;
-  left: 16.5vw;
+  left: 0;
   display: inline-flex;
   justify-content: space-between;
-  width: 63%;
-  height: auto;
+  width: 100%;
   background-color: #424242;
 }
 
@@ -58,27 +104,28 @@ header {
   border-radius: 10px;
 }
 
-.header-navigation ul {
+.header-navigation nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 16.5vw;
   padding: 0;
   z-index: 100;
 }
-.header-navigation li {
+.header-navigation a {
   padding: 3px 27px;
   color: #dbdbdb;
   font: 300 0.8rem "Open Sans";
   text-align: center;
+  text-decoration: none;
   border-right-width: 2px;
   border-right-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
   cursor: pointer;
   z-index: 100;
 }
-.header-navigation li.is_emphasized-header-item {
+.header-navigation a.is_emphasized-header-item {
   padding: 3px 36px;
   font: 400 1rem "Open sans", sans-serif;
   border-bottom: 3px solid #008bdc;
@@ -93,26 +140,26 @@ header {
   z-index: 100;
 }
 
-.authorisation-block > p, a {
+.authorisation-block p, a {
   color: #dbdbdb;
   font: 0.7rem "Open Sans";
-  margin: 0;
+  margin: 0 auto;
   padding: 2px 10px;
   z-index: 100;
 }
 
-.authorisation-block > p {
+.authorisation-block p {
   padding: 2px 22px;
   font-weight: 600;
 }
 
-.account-icon {
+.account-icon span {
   display: none;
-  width: 17px;
-  height: 17px;
-  background-image: url(../images/account.png);
-  background-size: contain;
-  background-repeat: no-repeat;
+  font-size: 17px;
+}
+
+.logout-button {
+  margin-right: 15px;
 }
 
 .empty-box {
@@ -124,25 +171,25 @@ header {
   height: 30px;
 }
 
-.open {
-  display: flex !important;
-  width: 60vw !important;
-  height: 90vh !important;
-}
-
-/* ********************************    nav   ********************************* */
-nav {
+/* ********************************    side-nav   ********************************* */
+.side-nav {
   position: fixed;
-  top: 0;
+  top: 30px;
   left: 0;
+  bottom: 72px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 16.5vw;
-  height: 90vh;
   background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
-  z-index: 170;
+}
+
+.side-nav.open {
+  display: flex;
+  width: auto;
+  max-width: 500px;
+  min-width: 300px;
 }
 
 .main-logo {
@@ -158,9 +205,11 @@ nav {
 }
 
 .nav-title {
+  align-self: flex-start;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: 0 0 3px 32px;
 }
 .nav-title p {
   margin: 0 0 0 17px;
@@ -181,10 +230,24 @@ nav {
   display: none;
 }
 .side-nav-items li {
+  position: relative;
   list-style-position: inside;
   padding: 16px 25px;
   font-weight: 300;
   color: #dbdbdb;
+  cursor: pointer;
+}
+.side-nav-items li:hover {
+  background-color: #2b2b2b;
+}
+.side-nav-items li::after, .side-nav-items li.is_emphasized-side-item::before {
+  position: absolute;
+  left: 9%;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  content: "";
+  height: 2px;
   border-bottom-width: 2px;
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
@@ -192,9 +255,24 @@ nav {
 .side-nav-items li span {
   padding-left: 10px;
 }
-.side-nav-items :nth-child(2) {
+.side-nav-items li.is_emphasized-side-item {
+  padding-bottom: 10px;
+  list-style-image: url("../images/folder-blue.png");
+  background-color: #2b2b2b;
+  border-bottom: none;
+}
+.side-nav-items li.is_emphasized-side-item ul {
+  padding: 5px 0 0 25px;
+}
+.side-nav-items li.is_emphasized-side-item ul li {
   list-style: none;
-  padding: 0;
+  padding: 5px 0;
+}
+.side-nav-items li.is_emphasized-side-item::before {
+  top: -2px;
+}
+.side-nav-items li.is_emphasized-side-item li::after {
+  border: none;
 }
 
 .side-pseudo-nav {
@@ -208,19 +286,10 @@ nav {
   font-size: 0.8rem;
   border: none;
 }
-.side-pseudo-nav.is_emphasized-side-item {
-  padding-bottom: 10px;
-  list-style-image: url("../images/folder-blue.png");
-  background-color: #2b2b2b;
-  border-bottom: none;
-  border-top-width: 2px;
-  border-top-style: groove;
-  border-color: rgba(100, 100, 100, 0.7);
-}
 
 .nav-bottom-info {
   width: 90%;
-  padding: 0;
+  padding: 0 5px;
   background: #1d1d1d;
 }
 .nav-bottom-info p {
@@ -242,23 +311,23 @@ nav {
 
 .right-frame {
   position: fixed;
-  top: 0;
+  top: 30px;
   right: 0;
+  bottom: 72px;
   width: 1vw;
-  height: 93vh;
   background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
 }
 
 /* ***********************************    main    ************************************ */
 main {
-  padding: 30px 30px 200px 16.5vw;
+  padding: 50px 30px 100px 18vw;
   background: #606060;
   z-index: 99;
 }
 
 .main-section {
   width: 76%;
-  margin: 18px;
+  height: auto;
   background: #424242;
 }
 
@@ -444,33 +513,36 @@ main {
   text-decoration: underline;
 }
 
-/* *****************************************   footer   ************************************************ */
-footer {
+/* *****************************************   player   ************************************************ */
+.player {
   position: fixed;
   bottom: 0;
   left: 0;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 10vh;
-  max-height: 72px;
+  height: 72px;
+  min-height: 72px;
   background-color: #2b2b2b;
 }
 
-.footer-content {
-  display: inline-flex;
+.player-content {
+  display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 99%;
   height: 70%;
   padding: 5px 0;
   margin: 15px 10px;
+  list-style-type: none;
   background-color: #1d1d1d;
+}
+.player-content > li {
+  height: 80%;
 }
 
 .swiper-buttons {
-  height: 80%;
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
@@ -512,8 +584,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 112px;
-  height: 80%;
   padding: 0 10px;
   border-right-width: 2px;
   border-right-style: groove;
@@ -583,11 +653,11 @@ footer {
 
 .current-album-cover {
   position: absolute;
-  top: -58px;
+  bottom: 35px;
   left: 14px;
   border: 7px solid #1d1d1d;
   border-radius: 7px;
-  z-index: 100;
+  z-index: 175;
 }
 
 .song-name-block {
@@ -606,7 +676,7 @@ footer {
 
 .song-name {
   display: inline-block;
-  width: 150px;
+  width: calc(100% - 210px);
   margin: 0;
   font: 300 10px "Open Sans", sans-serif;
   letter-spacing: 0.4px;
@@ -733,7 +803,7 @@ footer {
 }
 .adding-to-playlists ul {
   position: absolute;
-  top: -180px;
+  bottom: 56px;
   left: -80%;
   width: 148px;
   height: 160px;
@@ -768,25 +838,33 @@ footer {
 }
 
 .now-playing {
+  padding: 0 20px;
+  border-left-width: 2px;
+  border-left-style: groove;
+  border-color: #474747;
+}
+.now-playing button {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  height: 80%;
-  padding: 0 20px;
+  height: 100%;
   background-color: transparent;
-  border-top: 0;
-  border-bottom: 0;
-  border-right: 0;
-  border-left-width: 2px;
-  border-style: groove;
-  border-color: #474747;
+  border: none;
 }
 .now-playing p {
   width: 115px;
   margin: 0 20px 0 0;
   font: 300 20px "open sans", sans-serif;
   color: grey;
+}
+.now-playing a {
+  width: 35px;
+  height: 37px;
+  padding: 0;
+  background-image: url("../images/now-playing.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* ******************************************   media queries   ************************************** */
@@ -870,7 +948,7 @@ footer {
     right: 100px;
   }
 }
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1148px) {
   header {
     left: 0;
     width: 100%;
@@ -881,7 +959,10 @@ footer {
     margin: 0 5px;
   }
 
-  .header-navigation li {
+  .header-navigation nav {
+    margin: 0;
+  }
+  .header-navigation a {
     padding: 8px 27px;
   }
 
@@ -889,16 +970,34 @@ footer {
     display: none;
   }
 
-  .account-icon {
+  .account-icon span {
     display: inline-block;
   }
 
-  .empty-box {
-    visibility: hidden;
+  .side-nav {
+    display: none;
   }
 
-  nav {
-    display: none;
+  .nav-title {
+    align-self: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 3px 32px;
+  }
+  .nav-title p {
+    margin: 0 0 0 17px;
+    font: 300 1.7rem "Open Sans", sans-serif;
+    color: #dbdbdb;
+  }
+
+  main {
+    padding: 0 30px;
+    margin: 80px auto 100px auto;
+  }
+
+  .main-section {
+    width: 100%;
   }
 
   .side-track-time {
@@ -914,11 +1013,11 @@ footer {
   }
 }
 @media only screen and (max-width: 850px) {
-  .header-navigation li:nth-child(4) {
+  .header-navigation a:nth-child(4) {
     border: none;
   }
 
-  nav {
+  .side-nav {
     height: 88vh;
   }
 
@@ -926,18 +1025,20 @@ footer {
     transform: translateY(-30px);
   }
 
-  footer {
+  .player {
     display: block;
-    height: 13vh;
-    max-height: 93px;
+    height: 93px;
   }
 
-  .footer-content {
+  .player-content {
     position: relative;
     align-items: flex-start;
     height: 100%;
     padding: 10px 0;
     margin: 0 auto;
+  }
+  .player-content > li {
+    height: 35%;
   }
 
   .name-and-controller {
@@ -953,7 +1054,7 @@ footer {
   }
 
   .current-album-cover {
-    top: -270%;
+    bottom: 35px;
     border: none;
     width: 40px;
     height: 40px;
@@ -990,7 +1091,7 @@ footer {
   }
   .adding-to-playlists ul {
     position: absolute;
-    top: -168px;
+    bottom: 35px;
     left: 0;
     display: block;
     width: 100%;
@@ -1040,19 +1141,13 @@ footer {
   }
 }
 @media only screen and (max-width: 536px) {
-  .header-navigation li {
+  .header-navigation a {
     padding: 8px 15px;
     font-size: 11px;
   }
-  .header-navigation li.is_emphasized-header-item {
+  .header-navigation a.is_emphasized-header-item {
     padding: 6px 15px;
     font-size: 13px;
-  }
-
-  .account-icon {
-    width: 12px;
-    height: 12px;
-    padding: 0;
   }
 
   .logout-button {
@@ -1088,11 +1183,6 @@ footer {
     margin-right: 10px;
   }
 
-  .account-icon {
-    width: 15px;
-    height: 15px;
-  }
-
   .logout-button {
     display: none;
   }
@@ -1103,19 +1193,19 @@ footer {
     margin: 0;
   }
 
-  .header-navigation li {
+  .header-navigation a {
     padding: 6px 8px;
   }
-  .header-navigation li.is_emphasized-header-item {
+  .header-navigation a.is_emphasized-header-item {
     padding: 6px 8px;
   }
 
-  .footer-content {
+  .player-content {
     padding: 7px 0;
   }
 
   .current-album-cover {
-    top: -250%;
+    bottom: 38px;
     left: 8px;
     width: 35px;
     height: 35px;
