@@ -85,12 +85,20 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  display: inline-flex;
-  justify-content: space-between;
+  //display: flex;
+  //justify-content: space-between;
   width: 100%;
   background-color: $grey;
   z-index: 1;
 }
+
+
+.nav-and-authorisation {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1480px;
+}
+
 
 .side-nav-toggle {
   position: static;
@@ -124,24 +132,35 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    max-width: 40vw;
+    min-width: 40vw;
     list-style: none;
     margin: 0 0 0 16.5vw;
     padding: 0;
+
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   a {
-    padding: 3px 27px;
+    padding: 5px 27px;
     color: $white;
     font: 300 .8rem "Open Sans";
     text-align: center;
     text-decoration: none;
+    word-wrap: normal;
+    overflow-wrap: normal;
     border-right-width: 2px;
     border-right-style: groove;
     border-color: rgba(100,100,100,0.7);
     cursor: pointer;
 
     &.is_emphasized-header-item {
-      padding: 3px 36px;
+      padding: 5px 36px;
       font: 400 1rem "Open sans", sans-serif;
       border-bottom: 3px solid $blue;
       background-color: $darkgrey;
@@ -154,7 +173,7 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 21%;
+  margin-right: 30px;
 }
 
 .authorisation-block p, a {
@@ -184,7 +203,7 @@ header {
 
 .side-nav {
   position: fixed;
-  top: 30px;
+  top: 35px;
   left: 0;
   bottom: 72px;
   display: flex;
@@ -192,6 +211,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 16.5vw;
+  min-width: 264px;
   background: linear-gradient(0deg, rgba(43,43,43,1) 0%, rgba(66,66,66,1) 100%);
   z-index: 1;
 }
@@ -213,6 +233,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  min-height: 300px;
 }
 
 .nav-title {
@@ -231,8 +252,8 @@ header {
 
 .side-nav-items {
   align-self: flex-end;
+  flex: 1;
   width: 90%;
-  height: 44vh;
   list-style-image: url("../images/folder-grey.png");
   padding: 0;
   overflow-y: scroll;
@@ -249,6 +270,9 @@ header {
     font-weight: 300;
     color: $white;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:hover {
       background-color: $darkgrey;
@@ -303,25 +327,34 @@ header {
   margin: 0;
   list-style-type: none;
 
+
   li {
+    width: 95%;
     margin-left: 25px;
     padding: 10px 0;
     font-size: .8rem;
     border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 
 .nav-bottom-info {
   width: 90%;
-  padding: 0 5px;
+  padding: 0 6px;
   background: $darker;
 
   p {
+    width: 260px;
     margin: 5px 0;
     text-align: center;
     font-size: .6rem;
     color: $white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   :nth-child(3) {
@@ -360,14 +393,12 @@ header {
 
 
 main {
-  padding: 50px 30px 100px 18vw;
+  padding: 50px 40px 100px 18vw;
   background: $lightgrey;
 }
 
 .main-section {
-  width: 76%;
-  height: auto;
-  //margin: 18px;
+  max-width: 1100px;
   background: $grey;
 }
 
@@ -425,9 +456,11 @@ main {
   margin: 0 20px;
   font-size: 0.65rem;
   color: $white;
-  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: clip;
+  text-overflow: ellipsis;
   z-index: 0;
 
   button {
@@ -442,7 +475,36 @@ main {
 }
 
 
+.recommendations-and-playlist {
+  position: relative;
+  //height: 335px;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-color: rgba(100,100,100,0.7);
 
+  .discography {
+    margin-left: 13px;
+    color: $white;
+  }
+}
+
+
+.recommendations {
+  //position: absolute;
+  //top: 40px;
+  //left: 5px;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 58%;
+  margin: 0 0 20px 3px;
+
+  img {
+    margin: 10px 7px;
+    padding: 0;
+    border: 15px solid $darkgrey;
+  }
+}
 
 
 
@@ -457,7 +519,7 @@ main {
 
   ol {
     padding: 0;
-    margin: 5px 0 0 0;
+    margin: 0;
     list-style-position: inside;
 
     li {
@@ -510,8 +572,6 @@ main {
 
 .playlist-pages {
   margin: 7px 0;
-  position: absolute;
-  right: 35px;
   display: flex;
   justify-content: flex-start;
   padding: 0;
@@ -933,62 +993,24 @@ main {
 /* ******************************************   media queries   ************************************** */
 
 
-@media only screen and (max-width: 1497px) {
-  .recommendations {
-    img {
-      width: 100px;
-      height: 100px;
-    }
+@media only screen and (max-width: 1580px) {
+  .header-navigation nav {
+    margin-left: 264px;
+  }
+
+  main {
+    padding-left: 290px;
   }
 }
-
-
-
-
-@media only screen and (max-width: 1406px) {
-  .group-biography {
-    height: 150px;
-  }
-}
-
-
-
-.recommendations-and-playlist {
-  position: relative;
-  height: 320px;
-  border-bottom-width: 2px;
-  border-bottom-style: groove;
-  border-color: rgba(100,100,100,0.7);
-
-  .discography {
-    position: absolute;
-    margin: 13px 13px 7px 13px;
-    color: $white;
-  }
-}
-
-
-.recommendations {
-  position: absolute;
-  top: 40px;
-  left: 5px;
-  display: inline-flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 58%;
-
-  img {
-    margin: 10px 7px;
-    padding: 0;
-    border: 15px solid $darkgrey;
-  }
-}
-
 
 
 
 
 @media only screen and (max-width: 1366px) {
+
+  .group-biography {
+    height: 150px;
+  }
 
   .now-playing {
     p {
@@ -1003,7 +1025,7 @@ main {
 @media only screen and (max-width: 1326px) {
 
   .authorisation-block {
-    margin-right: 10%;
+    margin-right: 3%;
   }
 
   .album-info {
@@ -1016,7 +1038,6 @@ main {
   }
 
   .group-biography {
-    //width: 76%;
     height: auto;
     margin: 20px 0 0 0;
     text-align: justify;
@@ -1044,9 +1065,6 @@ main {
     }
   }
 
-  .main-section {
-    width: 90%;
-  }
 
   .group-biography {
     padding-left: 20px;
@@ -1058,7 +1076,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 460px;
+    //height: 480px;
 
     .discography {
       position: static;
@@ -1086,7 +1104,7 @@ main {
   }
 
   .playlist-pages {
-    right: 100px;
+    right: 207px;
   }
 }
 
@@ -1102,9 +1120,10 @@ main {
     width: 100%;
   }
 
+
   .side-nav-toggle {
     display: inline-block;
-    margin: 0 5px;
+    margin: auto 5px;
   }
 
   .header-navigation {
@@ -1138,6 +1157,7 @@ main {
   .nav-title {
     align-self: flex-start;
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
@@ -1181,7 +1201,7 @@ main {
     width: 90%;
   }
   .recommendations-and-playlist {
-    height: 500px;
+    //height: 500px;
   }
 }
 
@@ -1316,15 +1336,9 @@ main {
 
 @media only screen and (max-width: 787px) {
 
-  .recommendations-and-playlist {
-    height: 550px;
+  .header-navigation nav {
+    max-width: 60vw;
   }
-}
-
-
-
-
-@media only screen and (max-width: 607px) {
 
   main {
     padding: 0;
@@ -1334,7 +1348,67 @@ main {
     height: auto;
     margin: 0 auto 20px auto;
   }
+
+  .more-group-images {
+    grid-column-gap: 12px;
+    grid-row-gap: 20px;
+
+    img {
+      margin: 0;
+    }
+  }
+
+  .group-biography {
+    padding: 0;
+    font-size: .8rem;
+
+    button {
+      font-size: 1rem;
+    }
+  }
+
+  .recommendations-and-playlist {
+
+    .discography {
+      margin-left: 27px;
+    }
+  }
+
+  .recommendations {
+    margin: 0 15px;
+  }
 }
+
+
+
+@media only screen and (max-width: 710px) {
+  .recommendations img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+
+
+@media only screen and (max-height: 661px) {
+
+  .main-logo {
+    margin-top: 10px;
+  }
+
+  .nav-title {
+    img {
+      width: 32px;
+      height: 24px;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
 
 
 
@@ -1391,6 +1465,10 @@ main {
     font-size: 10px;
   }
 
+  .recommendations {
+    justify-content: space-around;
+  }
+
   .swiper-buttons {
     padding: 0 8px;
   }
@@ -1440,7 +1518,7 @@ main {
 
 @media only screen and (max-width: 370px) {
   .recommendations-and-playlist {
-    height: 650px;
+    //height: 650px;
   }
 }
 
@@ -1449,7 +1527,7 @@ main {
 @media only screen and (max-width: 340px) {
   .side-nav-toggle {
     min-width: 40px;
-    margin: 0;
+    margin: auto 0;
   }
 
   .header-navigation a {
