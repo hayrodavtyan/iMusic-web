@@ -76,6 +76,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  height: 25px;
   background-color: #424242;
   z-index: 1;
 }
@@ -83,13 +84,13 @@ header {
 .nav-and-authorisation {
   display: flex;
   justify-content: space-between;
-  max-width: 1480px;
+  max-width: 1244px;
 }
 
 .side-nav-toggle {
   position: static;
   display: none;
-  min-width: 50px;
+  min-width: 48px;
   height: 33px;
   transform: translateY(-3px);
 }
@@ -103,7 +104,7 @@ header {
 .side-nav-toggle .toggle-button__bar {
   width: 100%;
   height: 3px;
-  background: #1d1d1d;
+  background: #dbdbdb;
   display: block;
   margin: 7px 0;
   border-radius: 10px;
@@ -125,20 +126,22 @@ header {
   display: none;
 }
 .header-navigation a {
-  padding: 5px 27px;
+  height: 25px;
+  padding: 3px 30px;
   color: #dbdbdb;
   font: 300 0.8rem "Open Sans";
   text-align: center;
   text-decoration: none;
-  word-wrap: normal;
+  word-break: keep-all;
   overflow-wrap: normal;
   border-right-width: 2px;
   border-right-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
   cursor: pointer;
 }
-.header-navigation a.is_emphasized-header-item {
-  padding: 5px 36px;
+.header-navigation a.is_open {
+  height: 28px;
+  padding: 3px 36px;
   font: 400 1rem "Open sans", sans-serif;
   border-bottom: 3px solid #008bdc;
   background-color: #2b2b2b;
@@ -155,23 +158,31 @@ header {
   color: #dbdbdb;
   font: 0.7rem "Open Sans";
   margin: 0 auto;
-  padding: 2px 10px;
 }
 
 .authorisation-block p {
-  padding: 2px 22px;
+  padding: 1px 21px;
   font-weight: 600;
 }
 
+.account-icon {
+  height: 100%;
+  padding: 2px 0;
+}
 .account-icon span {
   display: none;
-  font-size: 17px;
+  font-size: 20px;
+}
+
+.logout-button {
+  padding: 2px 9px;
+  margin-bottom: 5px;
 }
 
 /* ********************************    side-nav   ********************************* */
 .side-nav {
   position: fixed;
-  top: 35px;
+  top: 25px;
   left: 0;
   bottom: 72px;
   display: flex;
@@ -179,7 +190,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 16.5vw;
-  min-width: 264px;
+  min-width: 252px;
   background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
   z-index: 1;
 }
@@ -192,7 +203,8 @@ header {
 }
 
 .main-logo {
-  margin-top: 40px;
+  transform: translateX(-16px);
+  margin: 18px 0 58px 0;
 }
 
 .centered-content {
@@ -209,7 +221,7 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 0 0 3px 32px;
+  margin: 0 0 0 24px;
 }
 .nav-title p {
   margin: 0 0 0 17px;
@@ -265,7 +277,7 @@ header {
   border-bottom: none;
 }
 .side-nav-items li.is_emphasized-side-item ul {
-  padding: 5px 0 0 25px;
+  padding: 18px 0 0 23px;
 }
 .side-nav-items li.is_emphasized-side-item ul li {
   list-style: none;
@@ -279,7 +291,6 @@ header {
 }
 
 .side-pseudo-nav {
-  padding: 0 0 3px 45px;
   margin: 0;
   list-style-type: none;
 }
@@ -295,13 +306,17 @@ header {
 }
 
 .nav-bottom-info {
-  width: 90%;
-  padding: 0 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 89%;
+  padding: 0 5px;
+  transform: translate(1px, 3px);
   background: #1d1d1d;
 }
 .nav-bottom-info p {
   width: 260px;
-  margin: 5px 0;
+  margin: 5px 0 5px 8px;
   text-align: center;
   font-size: 0.6rem;
   color: #dbdbdb;
@@ -310,7 +325,7 @@ header {
   text-overflow: ellipsis;
 }
 .nav-bottom-info :nth-child(3) {
-  margin: 10px 0;
+  margin: 11px 0;
   text-transform: capitalize;
 }
 .nav-bottom-info div {
@@ -322,27 +337,27 @@ header {
 
 .right-frame {
   position: fixed;
-  top: 30px;
+  top: 25px;
   right: 0;
   bottom: 72px;
-  width: 1vw;
+  width: 15px;
   background: linear-gradient(0deg, #2b2b2b 0%, #424242 100%);
 }
 
 /* ***********************************    main    ************************************ */
 main {
-  padding: 50px 40px 100px 18vw;
+  padding: 44px 40px 100px 18vw;
   background: #606060;
 }
 
 .main-section {
-  max-width: 1100px;
+  max-width: 940px;
   background: #424242;
 }
 
 .playlist-title {
   width: 100%;
-  padding: 10px 20px;
+  padding: 7px 22px;
   background: #2b2b2b;
   border-top: 3px solid #424242;
   border-bottom-width: 2px;
@@ -350,7 +365,7 @@ main {
   border-color: rgba(100, 100, 100, 0.7);
 }
 .playlist-title h1 {
-  margin: 0;
+  margin: 0 0 6px 0;
   font-size: 1.7rem;
   font-weight: 300;
   color: #dbdbdb;
@@ -361,7 +376,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 13px 10px;
+  padding: 10px 11px 15px 11px;
   margin: 0;
   border-bottom-width: 2px;
   border-bottom-style: groove;
@@ -376,7 +391,7 @@ main {
   grid-template-columns: 50% 50%;
   grid-column-gap: 11px;
   grid-row-gap: 5px;
-  margin-right: 25px;
+  margin-right: 41px;
   width: 256px;
 }
 
@@ -386,6 +401,8 @@ main {
   height: 130px;
   margin: 0 20px;
   font-size: 0.65rem;
+  line-height: 17px;
+  letter-spacing: 0.05px;
   color: #dbdbdb;
   display: -webkit-box;
   -webkit-line-clamp: 8;
@@ -396,8 +413,8 @@ main {
 }
 .group-biography button {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -1px;
+  right: 4px;
   font-size: 0.7rem;
   background: transparent;
   border: none;
@@ -411,7 +428,7 @@ main {
   border-color: rgba(100, 100, 100, 0.7);
 }
 .recommendations-and-playlist .discography {
-  margin-left: 13px;
+  margin: 14px 13px 8px 13px;
   color: #dbdbdb;
 }
 
@@ -419,22 +436,23 @@ main {
   display: inline-flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 58%;
-  margin: 0 0 20px 3px;
+  width: 535px;
+  margin: 0 0 0 5px;
 }
 .recommendations img {
-  margin: 10px 7px;
+  margin: 10px 0 16px 7px;
   padding: 0;
-  border: 15px solid #2b2b2b;
+  border-width: 12px 15px;
+  border-style: solid;
+  border-color: #2b2b2b;
 }
 
 .playlist {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -6px;
+  right: 3px;
   width: 35%;
   height: 100%;
-  font-size: 1.3rem;
   color: #dbdbdb;
 }
 .playlist ol {
@@ -444,28 +462,36 @@ main {
 }
 .playlist ol li {
   position: relative;
-  padding-left: 10px;
-  height: 27px;
+  padding: 2.7px 3px;
 }
 .playlist ol li a {
+  display: inline-block;
   position: absolute;
-  bottom: 0;
-  vertical-align: middle;
+  font-size: 12px;
+  bottom: 3px;
+  padding-left: 14px;
+  text-decoration: none;
 }
 .playlist ol li p {
   position: absolute;
-  right: 37px;
+  right: 40px;
   top: -5px;
   display: inline-block;
   width: 35px;
   font-size: 0.75rem;
-  text-align: center;
+  text-align: right;
 }
 .playlist ol li button {
   position: absolute;
-  right: 0;
+  height: 100%;
+  width: auto;
+  right: 7px;
   padding: 8px 10px;
   background-color: transparent;
+  background-image: url("../images/plus-grey.png");
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
   border: none;
 }
 .playlist ol li::marker {
@@ -476,10 +502,13 @@ main {
   background-color: #008bdc;
 }
 
-.is_emphasized-playlist-item {
+.playlist li.is_now-playing {
   margin-left: -10px;
   background-color: #008bdc;
   list-style: none;
+}
+.playlist li.is_now-playing a {
+  bottom: 6px;
 }
 
 .playlist-pages {
@@ -494,7 +523,7 @@ main {
   padding: 0 1.8px;
   text-decoration: none;
 }
-.playlist-pages.pages-emphasized {
+.playlist-pages li a.pages-emphasized {
   font-weight: 800;
   text-decoration: underline;
 }
@@ -524,17 +553,20 @@ main {
   background-color: #1d1d1d;
 }
 .player-content > li {
-  height: 80%;
-}
-
-.swiper-buttons {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
+  height: 80%;
   border-right-width: 2px;
   border-right-style: groove;
   border-color: #474747;
+}
+.player-content > li:nth-child(6) {
+  border: none;
+}
+
+.swiper-buttons {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px 0 20px;
 }
 
 .swiper-buttons button {
@@ -567,16 +599,12 @@ main {
 }
 
 .volume-block {
-  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
-  border-right-width: 2px;
-  border-right-style: groove;
-  border-color: #474747;
+  padding: 0 14px 0 10px;
 }
 .volume-block button {
-  margin: 0 5px;
+  margin: 0 4px;
   background-color: transparent;
   border: none;
 }
@@ -626,15 +654,10 @@ main {
 
 .name-and-controller {
   position: relative;
-  display: flex;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  height: 80%;
   color: #dbdbdb;
-  border-right-width: 2px;
-  border-right-style: groove;
-  border-color: #474747;
 }
 
 .current-album-cover {
@@ -647,10 +670,10 @@ main {
 }
 
 .song-name-block {
-  position: absolute;
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  margin-top: -3px;
 }
 
 .song-author {
@@ -688,14 +711,14 @@ main {
 .controller-full-block {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 
 .controller-block {
   width: 89%;
   position: relative;
-  margin: 15px 16px 0 16px;
+  margin: 1px 16px 0 16px;
   border-bottom: 1px solid #191919;
   height: 23px;
 }
@@ -715,7 +738,7 @@ main {
 
 .controller-slider {
   position: absolute;
-  left: 74.7%;
+  left: 75%;
   transform: translate(-4px, -2px);
   width: 8px;
   height: 8px;
@@ -727,13 +750,16 @@ main {
 .track-time {
   position: absolute;
   top: -36px;
-  left: 74.7%;
+  left: 75%;
   transform: translateX(-29px);
   display: flex;
   justify-content: center;
   width: 60px;
   height: 43px;
   background-image: url("../images/track-time-bg.png");
+  background-size: 54px 39px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .track-time p {
   margin: 10px auto;
@@ -745,8 +771,8 @@ main {
 .side-track-time {
   width: auto;
   height: auto;
-  margin-right: 10px;
-  padding: 0 12px;
+  margin-right: 12px;
+  padding: 0 14px;
   background-color: black;
 }
 .side-track-time p {
@@ -755,21 +781,16 @@ main {
 }
 
 .shuffle-repeat {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80%;
-  padding: 0 12px;
-  border-right-width: 2px;
-  border-right-style: groove;
-  border-color: #474747;
+  padding: 0 11px;
 }
 .shuffle-repeat button {
   width: 26px;
   height: 26px;
+  margin: 0 4px;
   border: none;
   background-color: transparent;
-  padding: 0 3px;
   background-size: contain;
 }
 .shuffle-repeat button:nth-child(1) {
@@ -782,23 +803,21 @@ main {
 .adding-to-playlists {
   position: relative;
   display: inline-block;
-  height: 80%;
-  padding: 0 30px;
+  padding: 0 29px;
 }
 .adding-to-playlists ul {
   position: absolute;
   bottom: 56px;
-  left: -80%;
-  width: 148px;
-  height: 160px;
-  padding: 7px 10px;
+  left: -84%;
+  width: 150px;
+  padding: 4px 10px 7px 10px;
   margin: 0;
   list-style-type: none;
   z-index: 101;
   background-color: #2b2b2b;
 }
 .adding-to-playlists li {
-  padding: 6px 0;
+  padding: 7px 0 5px 0;
   border-bottom-style: groove;
   border-color: rgba(100, 100, 100, 0.7);
 }
@@ -808,8 +827,7 @@ main {
   border: none;
   color: #dbdbdb;
 }
-
-.is_add-to-playlist {
+.adding-to-playlists .is_open {
   position: absolute;
   top: 0;
   left: 0;
@@ -822,10 +840,7 @@ main {
 }
 
 .now-playing {
-  padding: 0 20px;
-  border-left-width: 2px;
-  border-left-style: groove;
-  border-color: #474747;
+  padding: 0;
 }
 .now-playing button {
   display: flex;
@@ -833,12 +848,13 @@ main {
   align-items: center;
   flex-wrap: nowrap;
   height: 100%;
+  padding: 0 49px 0 42px;
   background-color: transparent;
   border: none;
 }
 .now-playing p {
   width: 115px;
-  margin: 0 20px 0 0;
+  margin: 0 13px 8px 0;
   font: 300 20px "open sans", sans-serif;
   color: grey;
 }
@@ -846,6 +862,7 @@ main {
   width: 35px;
   height: 37px;
   padding: 0;
+  margin-bottom: 6px;
   background-image: url("../images/now-playing.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -854,11 +871,11 @@ main {
 /* ******************************************   media queries   ************************************** */
 @media only screen and (max-width: 1580px) {
   .header-navigation nav {
-    margin-left: 264px;
+    margin-left: 245px;
   }
 
   main {
-    padding-left: 290px;
+    padding-left: 268px;
   }
 }
 @media only screen and (max-width: 1366px) {
@@ -872,7 +889,7 @@ main {
 }
 @media only screen and (max-width: 1326px) {
   .authorisation-block {
-    margin-right: 3%;
+    margin-right: 26px;
   }
 
   .album-info {
@@ -897,15 +914,6 @@ main {
     width: 90px;
     height: 90px;
     border-width: 6px;
-  }
-
-  .nav-title {
-    flex-direction: column;
-    top: 145px;
-    left: 20%;
-  }
-  .nav-title p {
-    margin: 0;
   }
 
   .group-biography {
@@ -956,6 +964,7 @@ main {
   }
 
   .header-navigation nav {
+    min-width: 60vw;
     margin: 0;
   }
   .header-navigation a {
@@ -1129,7 +1138,7 @@ main {
 }
 @media only screen and (max-width: 787px) {
   .header-navigation nav {
-    max-width: 60vw;
+    min-width: 60vw;
   }
 
   main {
